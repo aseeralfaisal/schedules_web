@@ -1,0 +1,65 @@
+@import 'config';
+
+.bg {
+  background-color: $bg-color;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.bg-img {
+  background-color: black;
+  width: 100%;
+}
+.showcase-parent {
+  display: flex;
+  justify-content: center;
+  margin-top: 7rem;
+  margin-left: 14rem;
+}
+.middle-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.87;
+  // background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(#02041bc9, #0d0b25e1);
+  border-radius: 2rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  img {
+    width: 500px;
+  }
+  h1 {
+    margin-top: -1.5rem;
+    color: $light-color;
+    width: max-content;
+  }
+  transform: scale(0.75);
+}
+.material-icons {
+  color: white;
+  font-size: $lg-font;
+}
+.textbox {
+  display: flex;
+  justify-content: center;
+  input {
+    outline: none;
+    border: none;
+    z-index: 1;
+    margin-left: 16rem;
+    margin-top: 6%;
+    width: 70%;
+    text-align: center;
+    height: 3rem;
+    border-radius: 1rem;
+    background: linear-gradient(#00000034, #03011646);
+    backdrop-filter: blur(10px);
+    border: 2px #6d63d4e1 double;
+    font-size: 15px;
+    color: white;
+    &:hover {
+      box-shadow: #ffffffc9 1px 0px 3px;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg {
+  background-color: #212121;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-img {
+  background-color: black;
+  width: 100%;
+}
+
+.showcase-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 7rem;
+  margin-left: 14rem;
+}
+
+.middle-showcase {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.87;
+  background: -webkit-gradient(linear, left top, left bottom, from(#02041bc9), to(#0d0b25e1));
+  background: linear-gradient(#02041bc9, #0d0b25e1);
+  border-radius: 2rem;
+  padding: 2rem;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+.middle-showcase img {
+  width: 500px;
+}
+
+.middle-showcase h1 {
+  margin-top: -1.5rem;
+  color: #f1f1f1;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.material-icons {
+  color: white;
+  font-size: 40px;
+}
+
+.textbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.textbox input {
+  outline: none;
+  border: none;
+  z-index: 1;
+  margin-left: 16rem;
+  margin-top: 6%;
+  width: 70%;
+  text-align: center;
+  height: 3rem;
+  border-radius: 1rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00000034), to(#03011646));
+  background: linear-gradient(#00000034, #03011646);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 2px #6d63d4e1 double;
+  font-size: 15px;
+  color: white;
+}
+
+.textbox input:hover {
+  -webkit-box-shadow: #ffffffc9 1px 0px 3px;
+          box-shadow: #ffffffc9 1px 0px 3px;
+}

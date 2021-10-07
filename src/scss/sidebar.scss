@@ -1,0 +1,61 @@
+@import 'config';
+
+.primary {
+  padding: 1em;
+  background: linear-gradient(#030a46c9, #302b63e1);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  height: 100%;
+  width: 15rem;
+  z-index: 2;
+
+  .app-title {
+    display: flex;
+    align-items: center;
+    .material-icons {
+      color: $icon-color;
+      margin: 0 0.25em;
+      font-size: 2.5em;
+    }
+    label {
+      font-size: 1.5em;
+      color: $icon-color;
+      font-weight: bold;
+    }
+  }
+
+  input {
+    font-size: $lg-font / 2.8;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5em 2.4em;
+    border-radius: 1em;
+    color: $light-color;
+    outline: none;
+    border: 2px rgba(0, 0, 0, 0) solid;
+    &:focus {
+      border: 2px rgba(255, 255, 255, 0.4) solid;
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 1em -1.5em;
+  }
+  li {
+    text-decoration: none;
+    color: $light-color;
+    font-size: $lg-font / 2.6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1em 1.66em;
+    width: 79.5%;
+    &:hover {
+      background-color: $hover;
+    }
+    .material-icons {
+      margin: 0 0.5em;
+      font-size: $lg-font / 1.8;
+      color: $icon-color;
+    }
+  }
+}
