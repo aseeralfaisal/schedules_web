@@ -12,7 +12,11 @@ const Sidebar = () => {
         <label>Schedules</label>
       </div>
       <ul>
-        <li data-attr='/home' onClick={() => history.push('/')}>
+        <li
+          style={{
+            background: location === '/' ? 'rgba(0,0,0,0.2)' : '',
+          }}
+          onClick={() => history.push('/')}>
           <span
             className='material-icons'
             style={{
@@ -21,13 +25,17 @@ const Sidebar = () => {
               left: 0,
               color: '#fff',
               opacity: location === '/' ? 1 : 0,
-              transition: 'ease-out 0.2s all'
+              transition: 'ease-out 0.2s all',
             }}>
             minimize
           </span>
           <span className='material-icons'>light</span> My day
         </li>
-        <li onClick={() => history.push('/important')}>
+        <li
+          style={{
+            background: location === '/important' ? 'rgba(0,0,0,0.2)' : '',
+          }}
+          onClick={() => history.push('/important')}>
           <span
             className='material-icons'
             style={{
@@ -36,14 +44,18 @@ const Sidebar = () => {
               left: 0,
               color: '#fff',
               opacity: location === '/important' ? 1 : 0,
-              transition: 'ease-out 0.2s all'
+              transition: 'ease-out 0.2s all',
             }}>
             minimize
           </span>
           <span className='material-icons'>notes</span>
           Important
         </li>
-        <li onClick={() => history.push('/schedule')}>
+        <li
+          style={{
+            background: location === '/schedule' ? 'rgba(0,0,0,0.2)' : '',
+          }}
+          onClick={() => history.push('/schedule')}>
           <span
             className='material-icons'
             style={{
@@ -52,7 +64,7 @@ const Sidebar = () => {
               left: 0,
               color: '#fff',
               opacity: location === '/schedule' ? 1 : 0,
-              transition: 'ease-out 0.2s all'
+              transition: 'ease-out 0.2s all',
             }}>
             minimize
           </span>
