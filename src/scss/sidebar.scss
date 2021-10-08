@@ -2,8 +2,8 @@
 
 .primary {
   padding: 1em;
-  background: linear-gradient(#030a46c9, #302b63e1);
-  backdrop-filter: blur(10px);
+  background: $grad-frost;
+  backdrop-filter: blur(5px);
   position: absolute;
   height: 100%;
   width: 15rem;

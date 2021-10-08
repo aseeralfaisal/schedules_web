@@ -7,10 +7,10 @@
 
 .primary {
   padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, from(#030a46c9), to(#302b63e1));
-  background: linear-gradient(#030a46c9, #302b63e1);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  background: -webkit-gradient(linear, left top, left bottom, from(#000428c5), to(#004e92d0));
+  background: linear-gradient(#000428c5, #004e92d0);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   position: absolute;
   height: 100%;
   width: 15rem;

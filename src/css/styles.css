@@ -8,7 +8,7 @@
 .bg {
   background-color: #212121;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -39,13 +39,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  opacity: 0.87;
   background: -webkit-gradient(linear, left top, left bottom, from(#02041bc9), to(#0d0b25e1));
   background: linear-gradient(#02041bc9, #0d0b25e1);
   border-radius: 2rem;
   padding: 2rem;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
 }
@@ -68,19 +67,22 @@
 }
 
 .textbox {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
+  margin-left: 8rem;
+  top: 36em;
 }
 
 .textbox input {
   outline: none;
   border: none;
   z-index: 1;
-  margin-left: 16rem;
   margin-top: 6%;
   width: 70%;
   text-align: center;
@@ -95,7 +97,47 @@
   color: white;
 }
 
-.textbox input:hover {
-  -webkit-box-shadow: #ffffffc9 1px 0px 3px;
-          box-shadow: #ffffffc9 1px 0px 3px;
+.todo-list-parent {
+  position: relative;
+  width: 70%;
+  margin-left: 22rem;
+  margin-top: 2%;
+}
+
+.todo-list-parent .material-icons {
+  position: absolute;
+  z-index: 1;
+  margin: 0.6rem 1.2rem;
+  font-size: 2rem;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.todo-list-parent .material-icons::before {
+  content: 'radio_button_unchecked';
+}
+
+.todo-list-child:hover {
+  cursor: pointer;
+}
+
+.todo-list-child:hover .material-icons::before {
+  content: 'task_alt';
+}
+
+.todo-list {
+  color: white;
+  margin: 0.1em 0.7rem;
+  padding: 0.85em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#02041bc9), to(#0d0b25e1));
+  background: linear-gradient(#02041bc9, #0d0b25e1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 1em;
+  text-indent: 2.25rem;
+}
+
+.todo-list:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#010842c5), to(#002f58d0));
+  background: linear-gradient(#010842c5, #002f58d0);
 }
