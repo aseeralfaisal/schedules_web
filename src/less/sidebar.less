@@ -2,34 +2,33 @@
 
 .primary {
   padding: 1em;
-  background: $grad-frost;
-  backdrop-filter: blur(5px);
+  background: @grad-frost;
+  backdrop-filter: blur(10px);
   position: absolute;
   height: 100%;
   width: 15rem;
   z-index: 2;
-
   .app-title {
     display: flex;
     align-items: center;
     .material-icons {
-      color: $icon-color;
+      color: @icon-color;
       margin: 0 0.25em;
       font-size: 2.5em;
     }
     label {
       font-size: 1.5em;
-      color: $icon-color;
+      color: @icon-color;
       font-weight: bold;
     }
   }
 
   input {
-    font-size: $lg-font / 2.8;
+    font-size: calc(@lg-font / 2.8);
     background: rgba(0, 0, 0, 0.3);
     padding: 0.5em 2.4em;
     border-radius: 1em;
-    color: $light-color;
+    color: @light-color;
     outline: none;
     border: 2px rgba(0, 0, 0, 0) solid;
     &:focus {
@@ -42,20 +41,21 @@
   }
   li {
     text-decoration: none;
-    color: $light-color;
-    font-size: $lg-font / 2.6;
+    color: @light-color;
+    font-size: calc(@lg-font / 2.6);
+    font-weight: 500;
     cursor: pointer;
     display: flex;
     align-items: center;
     padding: 1em 1.66em;
     width: 79.5%;
     &:hover {
-      background-color: $hover;
+      background-color: @hover;
     }
     .material-icons {
       margin: 0 0.5em;
-      font-size: $lg-font / 1.8;
-      color: $icon-color;
+      font-size: calc(@lg-font / 2);
+      color: @icon-color;
     }
   }
 }
