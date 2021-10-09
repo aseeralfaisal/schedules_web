@@ -16,18 +16,20 @@ const Home = () => {
 
   React.useEffect(() => {
     window.addEventListener('click', (e) => {
-      // e.target.className !== 'react-calendar' ? setShowCalendar(false) : setShowCalendar(true)
-      if (e.target.getAttribute('data') === 'calendar-icon' && e.target.getAttribute('data') === 'cal-div') {
-        setShowCalendar(true)
+      console.log(e.target.className)
+      if (e.target.getAttribute('data') !== 'calendar-icon') {
+        if (e.target.className !== 'calendar' || '') {
+          setShowCalendar(false)
+        } else setShowCalendar(true)
       }
     })
-  })
+  }, [])
 
   return (
     <>
       <div className='bg'>
         {showCalendar && (
-          <div className='calendar' data='cal-div'>
+          <div className='calendar'>
             <Calendar onChange={onChange} value={value} onClickDay={(day) => console.log(day)} />
           </div>
         )}
@@ -67,8 +69,7 @@ const Home = () => {
           <span
             data='calendar-icon'
             className='material-icons'
-            // onClick={() => (!showCalendar ? setShowCalendar(true) : setShowCalendar(false))}
-          >
+            onClick={() => (!showCalendar ? setShowCalendar(true) : setShowCalendar(false))}>
             event_available
           </span>
           <input

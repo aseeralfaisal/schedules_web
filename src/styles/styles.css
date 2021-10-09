@@ -113,6 +113,11 @@
   font-size: 15px;
   color: white;
 }
+.textbox .todo-input::-webkit-input-placeholder,
+.textbox .todo-input::placeholder {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.651);
+}
 .textbox .todo-input:focus {
   box-shadow: #0099ff 0px 0px 2px;
 }
