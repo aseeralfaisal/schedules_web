@@ -14,9 +14,19 @@
     background-color: black;
     width: 100%;
   }
+  .date-view {
+    position: absolute;
+    left: 27.5rem;
+    transform: translate(-50%, 0);
+    margin: 1rem 0;
+    h1 {
+      font-weight: 400;
+      font-size: 28px;
+    }
+  }
 }
 .calendar {
-  position: fixed;
+  position: absolute;
   z-index: 5;
   .flex-center();
   width: 100%;
@@ -24,11 +34,11 @@
   margin-left: 30rem;
 }
 .showcase {
-  .flex-center();
+  left: 50%;
+  transform: translate(-50%, 0);
   position: absolute;
-  // margin-top: 2rem;
-  margin-left: 7rem;
-  width: 100%;
+  margin: 1em 8em;
+  width: 30em;
   &-middle {
     .flex-center-column;
     background: @backdrop;
@@ -36,14 +46,12 @@
     padding: 2rem;
     backdrop-filter: blur(20px);
     img {
-      width: 500px;
+      width: 300px;
     }
     h1 {
-      margin-top: -1.5rem;
       color: @light-color;
-      width: max-content;
+      font-size: 30px;
     }
-    transform: scale(0.75);
   }
 }
 .material-icons {
@@ -75,12 +83,13 @@
     // margin-left: 16rem;
     margin-top: 6%;
     width: 70%;
-    text-align: center;
+    text-align: left;
+    text-indent: 1.5rem;
     height: 3rem;
     border-radius: 1rem;
     background: @backdrop;
     border: 1.5px solid rgba(179, 210, 255, 0.25);
-    // backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     // box-shadow: #b1b2ffea 0px 0px 3px;
     font-size: 15px;
     color: white;
@@ -98,7 +107,7 @@
   position: relative;
   width: 70%;
   margin-left: 22rem;
-  margin-top: 2rem;
+  margin-top: 4.5rem;
   margin-bottom: 8%;
   .material-icons {
     position: absolute;

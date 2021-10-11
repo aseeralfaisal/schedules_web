@@ -29,7 +29,7 @@ const Sidebar = () => {
             }}>
             minimize
           </span>
-          <span className='material-icons'>light</span> My day
+          <span id='event' className='material-icons'>date_range</span> My day
         </li>
         <li
           style={{

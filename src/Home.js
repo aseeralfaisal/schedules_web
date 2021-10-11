@@ -11,6 +11,7 @@ const Home = () => {
 
   const todos = useSelector((state) => state.todosList)
   const dispatch = useDispatch()
+  const date = new Date()
   const [showCalendar, setShowCalendar] = React.useState(false)
   const [value, onChange] = React.useState(new Date())
 
@@ -35,7 +36,10 @@ const Home = () => {
         )}
         <Sidebar />
         <div className='bg-img'>
-          <img src='/bg-black.jpg' alt='' style={{ width: '100%', height: '100%', position: 'fixed' }} />
+          <img src='/abs1.jpg' alt='' style={{ width: '100%', height: '100%', position: 'fixed' }} />
+        </div>
+        <div className='date-view'>
+          <h1 style={{ zIndex: 2, color: 'white' }}>{date.toDateString().slice(0, 11)}</h1>
         </div>
         <div className='todo-list-parent'>
           {todos.map((todo, idx) => {
@@ -54,7 +58,7 @@ const Home = () => {
 
         <div className='showcase' style={{ opacity: todos.length < 1 ? 1 : 0, transition: 'ease-in-out 0.2s' }}>
           <div className='showcase-middle'>
-            <img src='/showcase-01.png' alt='' />
+            <img src='/showcase.png' alt='' />
             <h1>Add task to your day</h1>
           </div>
         </div>
