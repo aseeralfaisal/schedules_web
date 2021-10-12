@@ -16,6 +16,9 @@
   align-items: center;
   flex-direction: column;
 }
+.bordered {
+  border: 1.5px solid rgba(179, 210, 255, 0.25);
+}
 * {
   margin: 0;
   padding: 0;
@@ -24,9 +27,8 @@
   font-weight: 500;
 }
 .react-calendar {
-  width: 25%;
-  max-width: 100%;
-  max-height: 25%;
+  width: 25rem;
+  max-height: 25rem;
   background: linear-gradient(#02041bc9, #0d0b25e1);
   font-family: 'Poppins', sans-serif;
   backdrop-filter: blur(20px);

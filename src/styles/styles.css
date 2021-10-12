@@ -12,9 +12,11 @@
 }
 .flex-center-column {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+}
+.bordered {
+  border: 1.5px solid rgba(179, 210, 255, 0.25);
 }
 * {
   margin: 0;
@@ -36,10 +38,11 @@
 .bg-img {
   background-color: black;
   width: 100%;
+  z-index: 0;
 }
 .bg .date-view {
   position: absolute;
-  left: 27.5rem;
+  left: 31rem;
   transform: translate(-50%, 0);
   margin: 1rem 0;
 }
@@ -54,21 +57,52 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 22rem;
-  margin-left: 30rem;
+  margin-top: 21.5rem;
+  margin-left: 28rem;
+}
+@media (max-width: 1486px) {
+  .calendar {
+    margin-left: 24rem;
+  }
+}
+@media (max-width: 1340px) {
+  .calendar {
+    margin-top: 20.5rem;
+    margin-left: 22rem;
+  }
+}
+@media (max-width: 1224px) {
+  .calendar {
+    margin-left: 19rem;
+  }
+}
+@media (max-width: 1112px) {
+  .calendar {
+    margin-left: 17rem;
+  }
+}
+@media (max-width: 1052px) {
+  .calendar {
+    margin-left: 15rem;
+  }
+}
+@media (max-width: 964px) {
+  .calendar {
+    margin-left: 13rem;
+  }
 }
 .showcase {
   left: 50%;
+  top: 17%;
   transform: translate(-50%, 0);
   position: absolute;
-  margin: 1em 8em;
+  margin: 0 7rem;
   width: 30em;
 }
 .showcase-middle {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   background: linear-gradient(#02041bc9, #0d0b25e1);
   border-radius: 2rem;
   padding: 2rem;
@@ -99,9 +133,19 @@
   cursor: pointer;
   font-size: calc(40px / 1.2);
   opacity: 0.6;
-  margin-top: 6%;
+  margin-top: 5%;
   margin-left: 66%;
   z-index: 2;
+}
+@media (max-width: 1200px) {
+  .textbox .material-icons {
+    margin-top: 6%;
+  }
+}
+@media (max-width: 1048px) {
+  .textbox .material-icons {
+    margin-left: 60%;
+  }
 }
 .textbox .material-icons:hover {
   opacity: 1;
@@ -122,6 +166,16 @@
   font-size: 15px;
   color: white;
 }
+@media (min-width: 1200px) {
+  .textbox .todo-input {
+    margin-top: 5%;
+  }
+}
+@media (max-width: 1048px) {
+  .textbox .todo-input {
+    width: 65%;
+  }
+}
 .textbox .todo-input::-webkit-input-placeholder,
 .textbox .todo-input::placeholder {
   font-weight: 500;
@@ -132,17 +186,43 @@
 }
 .todo-list-parent {
   position: relative;
-  width: 70%;
+  width: 71%;
   margin-left: 22rem;
   margin-top: 4.5rem;
   margin-bottom: 8%;
+}
+@media (max-width: 1448px) {
+  .todo-list-parent {
+    margin-left: 20rem;
+  }
+}
+@media (max-width: 1220px) {
+  .todo-list-parent {
+    margin-left: 19rem;
+  }
+}
+@media (max-width: 1136px) {
+  .todo-list-parent {
+    margin-left: 18rem;
+  }
+}
+@media (max-width: 1050px) {
+  .todo-list-parent {
+    width: 69%;
+  }
+}
+@media (max-width: 910px) {
+  .todo-list-parent {
+    width: 68%;
+    margin-left: 17rem;
+  }
 }
 .todo-list-parent .material-icons {
   position: absolute;
   z-index: 1;
   margin: 0.6rem 1.2rem;
   font-size: 2rem;
-  opacity: 0.7;
+  opacity: 0.9;
   cursor: pointer;
 }
 .todo-list-parent .material-icons::before {
@@ -150,10 +230,10 @@
 }
 .todo-list {
   color: white;
-  margin: 0.1em 0.7rem;
-  padding: 0.85em;
+  margin: 0.2rem 0.7rem;
+  padding: 0.6rem 0.85em;
   background: linear-gradient(#02041bc9, #0d0b25e1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   border-radius: 1em;
   text-indent: 2.25rem;
 }
@@ -165,4 +245,15 @@
 }
 .todo-list-child:hover .material-icons::before {
   content: 'task_alt';
+}
+.todo-list-child .completed-task .material-icons::before {
+  content: 'task_alt';
+}
+.todo-list-child .calendar-icon .material-icons {
+  font-size: 20px;
+  margin-left: -2.2rem;
+  top: 1.7rem;
+}
+.todo-list-child .calendar-icon .material-icons::before {
+  content: 'today';
 }

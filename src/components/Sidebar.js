@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <div className='primary'>
       <div className='app-title'>
-        <span className='material-icons'>event_available</span>
+        <span className='material-icons'>fact_check</span>
         <label>Schedules</label>
       </div>
       <ul>
@@ -29,7 +29,32 @@ const Sidebar = () => {
             }}>
             minimize
           </span>
-          <span id='event' className='material-icons'>date_range</span> My day
+          <span id='event' className='material-icons'>
+            date_range
+          </span>{' '}
+          My day
+        </li>
+        <li
+          style={{
+            background: location === '/completed' ? 'rgba(0,0,0,0.2)' : '',
+          }}
+          onClick={() => history.push('/completed')}>
+          <span
+            className='material-icons'
+            style={{
+              transform: 'rotate(90deg)',
+              position: 'fixed',
+              left: 0,
+              color: '#fff',
+              opacity: location === '/completed' ? 1 : 0,
+              transition: 'ease-out 0.2s all',
+            }}>
+            minimize
+          </span>
+          <span id='event' className='material-icons'>
+            done_all
+          </span>{' '}
+          Completed
         </li>
         <li
           style={{
