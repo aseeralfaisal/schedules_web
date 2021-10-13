@@ -30,7 +30,7 @@
   background: linear-gradient(#000428c5, #004e92d0);
   backdrop-filter: blur(10px);
   position: absolute;
-  height: 100vh;
+  height: 200vh;
   width: 15rem;
   z-index: 2;
 }
