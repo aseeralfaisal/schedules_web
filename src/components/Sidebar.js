@@ -2,13 +2,22 @@ import { useLocation, useHistory } from 'react-router'
 import '../styles/sidebar.css'
 import * as React from 'react'
 
-
 const Sidebar = () => {
   const location = useLocation().pathname
   const history = useHistory()
 
+  const [height, setHeight] = React.useState('')
+  React.useEffect(() => {
+    setHeight(window.screen.height)
+  }, [height])
+
   return (
-    <div className='primary'>
+    <div className='primary' style={{ height: `${height}vh` }}>
+      <div className='elem-type'>
+        <span className='material-icons'>
+          menu
+        </span>
+      </div>
       <div className='app-title'>
         <span className='material-icons'>fact_check</span>
         <label>Schedules</label>

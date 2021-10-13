@@ -42,13 +42,30 @@
 }
 .bg .date-view {
   position: absolute;
-  left: 31rem;
+  left: 33%;
   transform: translate(-50%, 0);
   margin: 1rem 0;
+}
+@media (max-width: 1340px) {
+  .bg .date-view {
+    left: 60%;
+    transform: translate(-50%, 0);
+  }
+}
+@media (max-width: 900px) {
+  .bg .date-view {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 .bg .date-view h1 {
   font-weight: 400;
   font-size: 28px;
+}
+@media (max-width: 900px) {
+  .bg .date-view h1 {
+    font-size: 25px;
+  }
 }
 .calendar {
   position: absolute;
@@ -99,6 +116,12 @@
   margin: 0 7rem;
   width: 30em;
 }
+@media (max-width: 700px) {
+  .showcase {
+    transform: scale(0.7);
+    left: 20%;
+  }
+}
 .showcase-middle {
   display: flex;
   flex-direction: column;
@@ -142,9 +165,9 @@
     margin-top: 6%;
   }
 }
-@media (max-width: 1048px) {
+@media (max-width: 1050px) {
   .textbox .material-icons {
-    margin-left: 60%;
+    margin-left: 57%;
   }
 }
 .textbox .material-icons:hover {
@@ -189,6 +212,7 @@
   width: 71%;
   margin-left: 22rem;
   margin-top: 4.5rem;
+  margin-bottom: 8%;
 }
 @media (max-width: 1448px) {
   .todo-list-parent {
@@ -255,4 +279,28 @@
 }
 .todo-list-child .calendar-icon .material-icons::before {
   content: 'today';
+}
+@media (max-width: 900px) {
+  .showcase {
+    left: 50%;
+    top: 17%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    margin: 0;
+    width: 30em;
+  }
+  .textbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    margin-left: 0;
+    top: 36em;
+  }
+  .todo-list-parent {
+    width: 71%;
+    margin-left: 16%;
+    margin-top: 4.5rem;
+  }
 }

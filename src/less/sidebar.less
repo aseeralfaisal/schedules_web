@@ -5,9 +5,12 @@
   background: @grad-frost;
   backdrop-filter: blur(10px);
   position: absolute;
-  height: 100%;
+  // height: 100vh;
   width: 15rem;
   z-index: 2;
+  .elem-type {
+    display: none;
+  }
   .app-title {
     display: flex;
     align-items: center;
@@ -60,3 +63,16 @@
   }
 }
 
+@media (max-width: 900px) {
+  .primary {
+    display: none;
+    backdrop-filter: none;
+    // .elem-type {
+    //   display: block;
+    //   .material-icons {
+    //     z-index: 2;
+    //     color: white;
+    //   }
+    // }
+  }
+}

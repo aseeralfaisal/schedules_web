@@ -12,9 +12,11 @@
 }
 .flex-center-column {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+}
+.bordered {
+  border: 1.5px solid rgba(179, 210, 255, 0.25);
 }
 * {
   margin: 0;
@@ -28,9 +30,11 @@
   background: linear-gradient(#000428c5, #004e92d0);
   backdrop-filter: blur(10px);
   position: absolute;
-  height: 100%;
   width: 15rem;
   z-index: 2;
+}
+.primary .elem-type {
+  display: none;
 }
 .primary .app-title {
   display: flex;
@@ -80,4 +84,10 @@
   margin: 0 0.5em;
   font-size: calc(40px / 2);
   color: rgba(255, 255, 255, 0.9);
+}
+@media (max-width: 900px) {
+  .primary {
+    display: none;
+    backdrop-filter: none;
+  }
 }
