@@ -6,13 +6,8 @@ const Sidebar = () => {
   const location = useLocation().pathname
   const history = useHistory()
 
-  const [height, setHeight] = React.useState('')
-  React.useEffect(() => {
-    setHeight(window.screen.height)
-  }, [height])
-
   return (
-    <div className='primary' style={{ height: `${height}vh` }}>
+    <div className='primary'>
       <div className='elem-type'>
         <span className='material-icons'>
           menu

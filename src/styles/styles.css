@@ -116,12 +116,6 @@
   margin: 0 7rem;
   width: 30em;
 }
-@media (max-width: 700px) {
-  .showcase {
-    transform: scale(0.7);
-    left: 20%;
-  }
-}
 .showcase-middle {
   display: flex;
   flex-direction: column;

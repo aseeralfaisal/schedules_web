@@ -30,6 +30,7 @@
   background: linear-gradient(#000428c5, #004e92d0);
   backdrop-filter: blur(10px);
   position: absolute;
+  height: 100vh;
   width: 15rem;
   z-index: 2;
 }
@@ -89,5 +90,12 @@
   .primary {
     display: none;
     backdrop-filter: none;
+  }
+  .primary .elem-type {
+    display: block;
+  }
+  .primary .elem-type .material-icons {
+    z-index: 2;
+    color: white;
   }
 }
