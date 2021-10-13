@@ -5,6 +5,7 @@ export const counterSlice = createSlice({
   initialState: {
     todosList: [],
     completed: [],
+    searchInput: '',
   },
 
   reducers: {
@@ -17,11 +18,14 @@ export const counterSlice = createSlice({
     completedTodo: (state, action) => {
       state.todosList = state.todosList.filter((todo) => todo.todo !== action.payload.todo)
     },
+    onChangeSearchInput: (state, action) => {
+      state.searchInput = action.payload
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { pushTodo, pushCompleted, completedTodo } = counterSlice.actions
+export const { pushTodo, onChangeSearchInput, pushCompleted, completedTodo } = counterSlice.actions
 
 const slice = counterSlice.reducer
 export default slice

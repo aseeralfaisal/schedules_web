@@ -11,6 +11,7 @@ const List = ({ type }) => {
 
   const todos = useSelector((state) => state.todosList)
   const completedTodos = useSelector((state) => state.completed)
+  const searchInput = useSelector((state) => state.searchInput)
   const dispatch = useDispatch()
   const date = new Date()
 
@@ -76,56 +77,69 @@ const List = ({ type }) => {
         </div>
         {type !== 'completed' ? (
           <div className='todo-list-parent'>
-            {todos.map((todo, idx) => {
-              return (
-                <div
-                  key={idx}
-                  className='todo-list-child'
-                  onClick={() => {
-                    dispatch(actions.pushCompleted(todo))
-                    dispatch(actions.completedTodo(todo))
-                  }}>
-                  <span className='material-icons'></span>
-                  <div className='todo-list'>
-                    <h4 style={{ textTransform: 'capitalize' }}>{todo.todo}</h4>
-                    <div className='calendar-icon'>
-                      <span className='material-icons'></span>
-                    </div>
-                    <label style={{ fontSize: 12, marginLeft: 60 }}>{todo.date}</label>
-                  </div>
-                </div>
+            {todos
+              .filter((todo) =>
+                searchInput !== '' ? todo.todo.toLowerCase().includes(searchInput.toLowerCase()) : todo
               )
-            })}
+              .map((todo, idx) => {
+                return (
+                  <div
+                    key={idx}
+                    className='todo-list-child'
+                    onClick={() => {
+                      dispatch(actions.pushCompleted(todo))
+                      dispatch(actions.completedTodo(todo))
+                    }}>
+                    <span className='material-icons'></span>
+                    <div className='todo-list'>
+                      <h4 style={{ textTransform: 'capitalize' }}>{todo.todo}</h4>
+                      <div className='calendar-icon'>
+                        <span className='material-icons'></span>
+                      </div>
+                      <label style={{ fontSize: 12, marginLeft: 60 }}>{todo.date}</label>
+                    </div>
+                  </div>
+                )
+              })}
           </div>
         ) : (
           <div className='todo-list-parent'>
-            {completedTodos.map((todo, idx) => {
-              return (
-                <div
-                  key={idx}
-                  className='todo-list-child'
-                  // onClick={() => {
-                  //   dispatch(actions.pushCompleted(todo))
-                  //   dispatch(actions.completedTodo(todo))
-                  // }}
-                >
-                  {type !== 'completed' ? (
-                    <span className='material-icons'></span>
-                  ) : (
-                    <div className='completed-task'>
-                      <span className='material-icons'></span>
-                    </div>
-                  )}
-                  <div className='todo-list'>
-                    <h4 style={{ textTransform: 'capitalize' }}>{todo.todo}</h4>
-                    <div className='calendar-icon'>
-                      <span className='material-icons'></span>
-                    </div>
-                    <label style={{ fontSize: 12, marginLeft: 60 }}>{todo.date}</label>
-                  </div>
-                </div>
+            {completedTodos
+              .filter((todo) =>
+                searchInput !== '' ? todo.todo.toLowerCase().includes(searchInput.toLowerCase()) : todo
               )
-            })}
+              .map((todo, idx) => {
+                return (
+                  <div
+                    key={idx}
+                    className='todo-list-child'
+                    // onClick={() => {
+                    //   dispatch(actions.pushCompleted(todo))
+                    //   dispatch(actions.completedTodo(todo))
+                    // }}
+                  >
+                    {type !== 'completed' ? (
+                      <span className='material-icons'></span>
+                    ) : (
+                      <div className='completed-task'>
+                        <span className='material-icons'></span>
+                      </div>
+                    )}
+                    <div className='todo-list'>
+                      <h4
+                        style={{
+                          textTransform: 'capitalize',
+                        }}>
+                        {todo.todo}
+                      </h4>
+                      <div className='calendar-icon'>
+                        <span className='material-icons'></span>
+                      </div>
+                      <label style={{ fontSize: 12, marginLeft: 60 }}>{todo.date}</label>
+                    </div>
+                  </div>
+                )
+              })}
           </div>
         )}
 

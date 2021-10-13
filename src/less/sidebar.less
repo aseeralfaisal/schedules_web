@@ -25,6 +25,27 @@
       font-weight: bold;
     }
   }
+  .todo-search {
+    display: flex;
+    margin: 1rem 0;
+    // margin-bottom: -0.8rem;
+    input {
+      text-indent: .1rem;
+      border: 1.5px solid rgba(179, 210, 255, 0.25);
+      &:focus {
+        border: 1.5px rgba(255, 255, 255, 0.4) solid;
+      }
+    }
+    .material-icons {
+      &::before {
+        content: 'search';
+      }
+      position: absolute;
+      font-size: 28px;
+      margin: .4rem;
+      opacity: 0.4;
+    }
+  }
 
   input {
     font-size: calc(@lg-font / 2.8);

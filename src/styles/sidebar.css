@@ -51,6 +51,26 @@
   color: rgba(255, 255, 255, 0.9);
   font-weight: bold;
 }
+.primary .todo-search {
+  display: flex;
+  margin: 1rem 0;
+}
+.primary .todo-search input {
+  text-indent: 0.1rem;
+  border: 1.5px solid rgba(179, 210, 255, 0.25);
+}
+.primary .todo-search input:focus {
+  border: 1.5px rgba(255, 255, 255, 0.4) solid;
+}
+.primary .todo-search .material-icons {
+  position: absolute;
+  font-size: 28px;
+  margin: 0.4rem;
+  opacity: 0.4;
+}
+.primary .todo-search .material-icons::before {
+  content: 'search';
+}
 .primary input {
   font-size: calc(40px / 2.8);
   background: rgba(0, 0, 0, 0.3);
