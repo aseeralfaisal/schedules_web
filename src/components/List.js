@@ -94,9 +94,23 @@ const List = ({ type }) => {
                     <div className='todo-list'>
                       <h4 style={{ textTransform: 'capitalize' }}>{todo.todo}</h4>
                       <div className='calendar-icon'>
-                        <span className='material-icons'></span>
+                        <span
+                          className='material-icons'
+                          style={{
+                            color: todo.date.slice(10, 12) < date.getDate().toString() ? '#FF3F00' : 'white',
+                          }}></span>
                       </div>
-                      <label style={{ fontSize: 12, marginLeft: 60 }}>{todo.date}</label>
+                      <label
+                        style={{
+                          fontSize: 12,
+                          marginLeft: 60,
+                          color: todo.date.slice(10, 12) < date.getDate().toString() ? '#FF3F00' : 'white',
+                          fontWeight: todo.date.slice(10, 12) < date.getDate().toString() ? 'bold' : '500',
+                        }}>
+                        {todo.date.slice(10, 12) < date.getDate().toString()
+                          ? `The deadline was on ${todo.date}`
+                          : todo.date}
+                      </label>
                     </div>
                   </div>
                 )
