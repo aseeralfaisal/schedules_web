@@ -1,6 +1,8 @@
 import { useLocation, useHistory } from 'react-router'
 import '../styles/sidebar.css'
 import * as React from 'react'
+
+
 const Sidebar = () => {
   const location = useLocation().pathname
   const history = useHistory()

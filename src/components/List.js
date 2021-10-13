@@ -51,8 +51,6 @@ const List = ({ type }) => {
   //   })()
   // }, [])
 
-  console.log(completedTodos)
-
   const onSubmit = (e) => {
     e.preventDefault()
     const itodo = { todo: todo, date: dateValue }
