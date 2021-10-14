@@ -8,6 +8,7 @@ import '../styles/calendar.css'
 
 const List = ({ type }) => {
   const [todo, setTodo] = React.useState('')
+  const [openSidebar, setOpenSidebar] = React.useState(false)
 
   const todos = useSelector((state) => state.todosList)
   const completedTodos = useSelector((state) => state.completed)
@@ -59,6 +60,14 @@ const List = ({ type }) => {
     setTodo('')
     setDateVal(new Date())
   }
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+
+  React.useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWindowWidth(window.innerWidth)
+    })
+    if (windowWidth > 900) setOpenSidebar(false)
+  }, [windowWidth])
 
   return (
     <>
@@ -68,9 +77,19 @@ const List = ({ type }) => {
             <Calendar onChange={setDateVal} value={dateVal} onClickDay={(day) => console.log(day)} />
           </div>
         )}
-        <Sidebar />
+        <div style={{ opacity: windowWidth > 900 ? 1 : 0 }}>
+          <Sidebar />
+        </div>
+        <div style={{ opacity: openSidebar ? 1 : 0 }}>
+          <Sidebar />
+        </div>
         <div className='bg-img'>
-          <img src='/abs1.jpg' alt='' style={{ width: '100%', height: '100%', position: 'fixed' }} />
+          <img src='/abs1.jpg' alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
+        </div>
+        <div className='elem-type'>
+          <span className='material-icons' onClick={() => setOpenSidebar(!openSidebar)}>
+            {openSidebar ? 'menu_open' : 'menu'}
+          </span>
         </div>
         <div className='date-view'>
           <h1 style={{ color: 'white' }}>{`${dayNames[date.getDay()]}, ${date.toDateString().slice(4, 11)}`}</h1>

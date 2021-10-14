@@ -10,6 +10,14 @@
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+  .elem-type {
+    position: absolute;
+    margin: 1rem;
+    z-index: 2;
+    @media (min-width: 900px){
+      opacity: 0;
+    }
+  }
   &-img {
     background-color: black;
     width: 100%;
@@ -228,8 +236,9 @@
     top: 17%;
     transform: translate(-50%, 0);
     position: absolute;
-    margin: 0;
-    width: 30em;
+    margin: 0 -15rem;
+    // width: 30em;
+    transform: scale(0.6)
   }
   .textbox {
     .flex-center();

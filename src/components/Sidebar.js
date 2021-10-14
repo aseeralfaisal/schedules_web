@@ -11,75 +11,74 @@ const Sidebar = () => {
   const searchInput = useSelector((state) => state.searchInput)
   const dispatch = useDispatch()
 
+
   return (
-    <div className='primary'>
-      <div className='elem-type'>
-        <span className='material-icons'>menu</span>
-      </div>
-      <div className='app-title'>
-        <span className='material-icons'>fact_check</span>
-        <label>Schedules</label>
-      </div>
-      <form
-        className='todo-search'
-        onSubmit={(e) => {
-          e.preventDefault()
-          dispatch(actions.onChangeSearchInput(''))
-        }}>
-        <span className='material-icons'></span>
-        <input
-          type='text'
-          placeholder='Search todos...'
-          value={searchInput}
-          onChange={(e) => dispatch(actions.onChangeSearchInput(e.target.value))}
-        />
-      </form>
-      <ul>
-        <li
-          style={{
-            background: location === '/' ? 'rgba(0,0,0,0.2)' : '',
-          }}
-          onClick={() => history.push('/')}>
-          <span
-            className='material-icons'
+    <>
+      <div className='primary'>
+        <div className='app-title'>
+          <span className='material-icons'>fact_check</span>
+          <label>Schedules</label>
+        </div>
+        <form
+          className='todo-search'
+          onSubmit={(e) => {
+            e.preventDefault()
+            dispatch(actions.onChangeSearchInput(''))
+          }}>
+          <span className='material-icons'></span>
+          <input
+            type='text'
+            placeholder='Search todos...'
+            value={searchInput}
+            onChange={(e) => dispatch(actions.onChangeSearchInput(e.target.value))}
+          />
+        </form>
+        <ul>
+          <li
             style={{
-              transform: 'rotate(90deg)',
-              position: 'fixed',
-              left: 0,
-              color: '#fff',
-              opacity: location === '/' ? 1 : 0,
-              transition: 'ease-out 0.2s all',
-            }}>
-            minimize
-          </span>
-          <span id='event' className='material-icons'>
-            date_range
-          </span>{' '}
-          My day
-        </li>
-        <li
-          style={{
-            background: location === '/completed' ? 'rgba(0,0,0,0.2)' : '',
-          }}
-          onClick={() => history.push('/completed')}>
-          <span
-            className='material-icons'
+              background: location === '/' ? 'rgba(0,0,0,0.2)' : '',
+            }}
+            onClick={() => history.push('/')}>
+            <span
+              className='material-icons'
+              style={{
+                transform: 'rotate(90deg)',
+                position: 'fixed',
+                left: 0,
+                color: '#fff',
+                opacity: location === '/' ? 1 : 0,
+                transition: 'ease-out 0.2s all',
+              }}>
+              minimize
+            </span>
+            <span id='event' className='material-icons'>
+              date_range
+            </span>{' '}
+            My day
+          </li>
+          <li
             style={{
-              transform: 'rotate(90deg)',
-              position: 'fixed',
-              left: 0,
-              color: '#fff',
-              opacity: location === '/completed' ? 1 : 0,
-              transition: 'ease-out 0.2s all',
-            }}>
-            minimize
-          </span>
-          <span id='event' className='material-icons'>
-            done_all
-          </span>{' '}
-          Completed
-        </li>
-        {/* <li
+              background: location === '/completed' ? 'rgba(0,0,0,0.2)' : '',
+            }}
+            onClick={() => history.push('/completed')}>
+            <span
+              className='material-icons'
+              style={{
+                transform: 'rotate(90deg)',
+                position: 'fixed',
+                left: 0,
+                color: '#fff',
+                opacity: location === '/completed' ? 1 : 0,
+                transition: 'ease-out 0.2s all',
+              }}>
+              minimize
+            </span>
+            <span id='event' className='material-icons'>
+              done_all
+            </span>{' '}
+            Completed
+          </li>
+          {/* <li
           style={{
             background: location === '/important' ? 'rgba(0,0,0,0.2)' : '',
           }}
@@ -119,8 +118,9 @@ const Sidebar = () => {
           <span className='material-icons'>schedule</span>
           Tasks
         </li> */}
-      </ul>
-    </div>
+        </ul>
+      </div>
+    </>
   )
 }
 
