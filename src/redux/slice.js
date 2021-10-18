@@ -6,6 +6,7 @@ export const counterSlice = createSlice({
     todosList: [],
     completed: [],
     searchInput: '',
+    theme: '',
   },
 
   reducers: {
@@ -21,11 +22,14 @@ export const counterSlice = createSlice({
     onChangeSearchInput: (state, action) => {
       state.searchInput = action.payload
     },
+    setTheme: (state, action) => {
+      state.theme = action.payload
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { pushTodo, onChangeSearchInput, pushCompleted, completedTodo } = counterSlice.actions
+export const { pushTodo, onChangeSearchInput, pushCompleted, completedTodo, setTheme } = counterSlice.actions
 
 const slice = counterSlice.reducer
 export default slice

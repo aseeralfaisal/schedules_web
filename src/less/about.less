@@ -1,0 +1,37 @@
+.themes-gallery {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  transform: translate(-50%, 0);
+  // margin-left: 8%;
+  margin-top: 5rem;
+  .thumbs {
+    // position: fixed;
+    // z-index: 5;
+    width: 15rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    border: 5px solid #222ed8da;
+    @media (max-width: 1180px) {
+      width: 12rem;
+    }
+    @media (max-width: 1050px) {
+      width: 9rem;
+    }
+    @media (max-width: 600px) {
+      width: 7rem;
+    }
+    &:hover {
+      border: 5px solid rgba(255, 255, 255, 0.8);
+    }
+  }
+  @media (max-width: 1395px) {
+    margin-left: 5%;
+  }
+  @media (max-width: 1260px) {
+    margin-left: 10%;
+  }
+  @media (max-width: 900px) {
+    margin-left: 0;
+  }
+}

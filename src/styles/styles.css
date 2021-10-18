@@ -52,7 +52,7 @@
 }
 .bg .date-view {
   position: absolute;
-  left: 33%;
+  left: 30.7%;
   transform: translate(-50%, 0);
   margin: 1rem 0;
 }
@@ -263,9 +263,6 @@
   backdrop-filter: blur(10px);
   border-radius: 1em;
   text-indent: 2.25rem;
-}
-.todo-list:hover {
-  background: linear-gradient(#010842c5, #002f58d0);
 }
 .todo-list-child:hover {
   cursor: pointer;

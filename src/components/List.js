@@ -20,7 +20,7 @@ const List = ({ type }) => {
   const searchInput = useSelector((state) => state.searchInput)
   const dispatch = useDispatch()
   const date = new Date()
-  const themes = useSelector((state) => state.themes)
+  const currentTheme = useSelector((state) => state.theme)
 
   const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
   const monthNames = [
@@ -95,7 +95,7 @@ const List = ({ type }) => {
           <Sidebar />
         </div>
         <div className='bg-img'>
-          <img src='/abs3.jpg' alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
+          <img src={currentTheme} alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
         </div>
         <div className='elem-type'>
           <span className='material-icons' onClick={() => setOpenSidebar(!openSidebar)}>

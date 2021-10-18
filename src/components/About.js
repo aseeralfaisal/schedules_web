@@ -1,4 +1,5 @@
 import '../styles/styles.css'
+import '../styles/about.css'
 import { useSelector, useDispatch } from 'react-redux'
 import * as actions from '../redux/slice'
 import Sidebar from './Sidebar'
@@ -8,7 +9,7 @@ import themes from './Themes'
 const List = ({ type }) => {
   const [openSidebar, setOpenSidebar] = React.useState(false)
 
-  const searchInput = useSelector((state) => state.searchInput)
+  const currentTheme = useSelector((state) => state.theme)
   const dispatch = useDispatch()
 
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
@@ -30,18 +31,32 @@ const List = ({ type }) => {
           <Sidebar />
         </div>
         <div className='bg-img'>
-          <img src='/abs3.jpg' alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
+          <img src={currentTheme} alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
         </div>
         <div className='elem-type'>
           <span className='material-icons' onClick={() => setOpenSidebar(!openSidebar)}>
             {openSidebar ? 'menu_open' : 'menu'}
           </span>
         </div>
-        {/* <div style={{ zIndex: 5, marginLeft: 400, backgroundColor: 'black'  }}>
+        <div className='date-view'>
+          <h1 style={{ color: 'white' }}>Change theme</h1>
+        </div>
+        <div className='themes-gallery'>
           {themes.map((theme) => (
-            <h1 style={{ fontSize: 40, color: 'white', zIndex: 2 }}>{theme}</h1>
+            <img
+              className='thumbs'
+              src={theme}
+              alt=''
+              style={{
+                border: currentTheme === theme && '5px solid rgba(255, 255, 255, 0.8)',
+              }}
+              onClick={() => {
+                dispatch(actions.setTheme(theme))
+                console.log(theme)
+              }}
+            />
           ))}
-        </div> */}
+        </div>
       </div>
     </>
   )
