@@ -51,8 +51,9 @@ const List = ({ type }) => {
                 border: currentTheme === theme && '5px solid rgba(255, 255, 255, 0.8)',
               }}
               onClick={() => {
-                dispatch(actions.setTheme(theme))
-                console.log(theme)
+                const skin = `${theme.slice(0, 4)}.jpg`
+                dispatch(actions.setTheme(skin))
+                console.log(skin)
               }}
             />
           ))}
