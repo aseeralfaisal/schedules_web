@@ -78,46 +78,28 @@ const Sidebar = () => {
             </span>{' '}
             Completed
           </li>
-          {/* <li
-          style={{
-            background: location === '/important' ? 'rgba(0,0,0,0.2)' : '',
-          }}
-          onClick={() => history.push('/important')}>
-          <span
-            className='material-icons'
+          <li
             style={{
-              transform: 'rotate(90deg)',
-              position: 'fixed',
-              left: 0,
-              color: '#fff',
-              opacity: location === '/important' ? 1 : 0,
-              transition: 'ease-out 0.2s all',
-            }}>
-            minimize
-          </span>
-          <span className='material-icons'>notes</span>
-          Important
-        </li>
-        <li
-          style={{
-            background: location === '/schedule' ? 'rgba(0,0,0,0.2)' : '',
-          }}
-          onClick={() => history.push('/schedule')}>
-          <span
-            className='material-icons'
-            style={{
-              transform: 'rotate(90deg)',
-              position: 'fixed',
-              left: 0,
-              color: '#fff',
-              opacity: location === '/schedule' ? 1 : 0,
-              transition: 'ease-out 0.2s all',
-            }}>
-            minimize
-          </span>
-          <span className='material-icons'>schedule</span>
-          Tasks
-        </li> */}
+              background: location === '/about' ? 'rgba(0,0,0,0.2)' : '',
+            }}
+            onClick={() => history.push('/about')}>
+            <span
+              className='material-icons'
+              style={{
+                transform: 'rotate(90deg)',
+                position: 'fixed',
+                left: 0,
+                color: '#fff',
+                opacity: location === '/about' ? 1 : 0,
+                transition: 'ease-out 0.2s all',
+              }}>
+              minimize
+            </span>
+            <span id='event' className='material-icons'>
+              info
+            </span>{' '}
+            About
+          </li>
         </ul>
       </div>
     </>

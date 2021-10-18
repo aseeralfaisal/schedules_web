@@ -5,23 +5,48 @@ import Sidebar from './Sidebar'
 import * as React from 'react'
 import Calendar from 'react-calendar'
 import '../styles/calendar.css'
+import { useLocation, useHistory } from 'react-router'
 
 const List = ({ type }) => {
   const [todo, setTodo] = React.useState('')
   const [openSidebar, setOpenSidebar] = React.useState(false)
+
+  const todoInputRef = React.useRef()
+  const location = useLocation().pathname
+  const history = useHistory()
 
   const todos = useSelector((state) => state.todosList)
   const completedTodos = useSelector((state) => state.completed)
   const searchInput = useSelector((state) => state.searchInput)
   const dispatch = useDispatch()
   const date = new Date()
+  const themes = useSelector((state) => state.themes)
 
   const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+  const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]
   const [showCalendar, setShowCalendar] = React.useState(false)
   const [dateVal, setDateVal] = React.useState(date)
-  const dateValue = `${dateVal.toDateString().slice(0, 3)} , ${dateVal.toDateString().slice(4, 10)} , ${dateVal
-    .toDateString()
-    .slice(10, 15)}`
+
+  const day = dateVal.getDay()
+  const dt = dateVal.getDate()
+  const month = dateVal.getMonth()
+  const year = dateVal.getFullYear()
+
+  const dateValue = [{ day, month, dt, year }]
+  // console.log(dateValue)
 
   React.useEffect(() => {
     window.addEventListener('click', (e) => {
@@ -33,29 +58,9 @@ const List = ({ type }) => {
     })
   }, [])
 
-  // React.useEffect(() => {
-  //   ;(async () => {
-  //     if (Notification.permission !== 'default' || 'granted') {
-  //       const notify = await Notification.requestPermission()
-  //       console.log(notify)
-  //       if (notify === 'granted') {
-  //         const noti = new Notification('Schedules', {
-  //           body: 'Hey mate, how are ya!!',
-  //           icon: '/favicon.ico',
-  //           timestamp: 50,
-  //           badge: '',
-  //         })
-  //         noti.onclick = () => {
-  //           console.log('clicked notification')
-  //         }
-  //       }
-  //     }
-  //   })()
-  // }, [])
-
   const onSubmit = (e) => {
     e.preventDefault()
-    const itodo = { todo: todo, date: dateValue }
+    const itodo = { todo: todo, date: dateValue[0] }
     todo !== '' && dispatch(actions.pushTodo(itodo))
     setTodo('')
     setDateVal(new Date())
@@ -68,6 +73,12 @@ const List = ({ type }) => {
     })
     if (windowWidth > 900) setOpenSidebar(false)
   }, [windowWidth])
+
+  React.useEffect(() => {
+    if (location === '/'){
+      todoInputRef.current.focus()
+    }
+  },[location])
 
   return (
     <>
@@ -84,7 +95,7 @@ const List = ({ type }) => {
           <Sidebar />
         </div>
         <div className='bg-img'>
-          <img src='/abs1.jpg' alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
+          <img src='/abs3.jpg' alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
         </div>
         <div className='elem-type'>
           <span className='material-icons' onClick={() => setOpenSidebar(!openSidebar)}>
@@ -116,19 +127,33 @@ const List = ({ type }) => {
                         <span
                           className='material-icons'
                           style={{
-                            color: todo.date.slice(10, 12) < date.getDate().toString() ? '#FF3F00' : 'white',
+                            color:
+                              todo.date.month < date.getMonth() ||
+                              todo.date.dt < date.getDate() ||
+                              todo.date.year < date.getFullYear()
+                                ? '#FF3F00'
+                                : 'white',
                           }}></span>
                       </div>
                       <label
                         style={{
                           fontSize: 12,
                           marginLeft: 60,
-                          color: todo.date.slice(10, 12) < date.getDate().toString() ? '#FF3F00' : 'white',
-                          fontWeight: todo.date.slice(10, 12) < date.getDate().toString() ? 'bold' : '500',
+                          color:
+                            todo.date.month < date.getMonth() ||
+                            todo.date.dt < date.getDate() ||
+                            todo.date.year < date.getFullYear()
+                              ? '#FF3F00'
+                              : 'white',
+                          fontWeight:
+                            todo.date.month < date.getMonth() ||
+                            todo.date.dt < date.getDate() ||
+                            todo.date.year < date.getFullYear()
+                              ? 'bold'
+                              : '500',
                         }}>
-                        {todo.date.slice(10, 12) < date.getDate().toString()
-                          ? `The deadline was on ${todo.date}`
-                          : todo.date}
+                        {dayNames[todo.date.day].slice(0, 3)}, {monthNames[todo.date.month].slice(0, 3)} {todo.date.dt},{' '}
+                        {todo.date.year}
                       </label>
                     </div>
                   </div>
@@ -146,11 +171,9 @@ const List = ({ type }) => {
                   <div
                     key={idx}
                     className='todo-list-child'
-                    // onClick={() => {
-                    //   dispatch(actions.pushCompleted(todo))
-                    //   dispatch(actions.completedTodo(todo))
-                    // }}
-                  >
+                    onClick={() => {
+                      console.log(todo)
+                    }}>
                     {type !== 'completed' ? (
                       <span className='material-icons'></span>
                     ) : (
@@ -168,7 +191,10 @@ const List = ({ type }) => {
                       <div className='calendar-icon'>
                         <span className='material-icons'></span>
                       </div>
-                      <label style={{ fontSize: 12, marginLeft: 60 }}>{todo.date}</label>
+                      <label style={{ fontSize: 12, marginLeft: 60 }}>
+                        {dayNames[todo.date.day].slice(0, 3)}, {monthNames[todo.date.month].slice(0, 3)} {todo.date.dt},{' '}
+                        {todo.date.year}
+                      </label>
                     </div>
                   </div>
                 )
@@ -189,22 +215,43 @@ const List = ({ type }) => {
           </div>
         )}
 
-        <form className='textbox' onSubmit={(e) => onSubmit(e)}>
-          <span
-            data='calendar-icon'
-            className='material-icons'
-            onClick={() => (!showCalendar ? setShowCalendar(true) : setShowCalendar(false))}>
-            event_available
-          </span>
+        {type !== 'completed' ? (
+          <form className='textbox' onSubmit={(e) => onSubmit(e)}>
+            <span
+              data='calendar-icon'
+              className='material-icons'
+              onClick={() => (!showCalendar ? setShowCalendar(true) : setShowCalendar(false))}>
+              event_available
+            </span>
 
-          <input
-            className='todo-input'
-            type='text'
-            placeholder=' + Add a task'
-            value={todo}
-            onChange={(e) => setTodo(e.target.value)}
-          />
-        </form>
+            <input
+              className='todo-input'
+              type='text'
+              placeholder=' + Add a task'
+              value={todo}
+              onChange={(e) => setTodo(e.target.value)}
+              ref={todoInputRef}
+            />
+          </form>
+        ) : (
+          <form className='textbox' onSubmit={(e) => onSubmit(e)}>
+            <span
+              data='calendar-icon'
+              className='material-icons'
+              onClick={() => (!showCalendar ? setShowCalendar(true) : setShowCalendar(false))}>
+              event_available
+            </span>
+
+            <input
+              className='todo-input'
+              type='text'
+              placeholder=' + Add a task'
+              value={todo}
+              // onChange={(e) => setTodo(e.target.value)}
+              onClick={() => history.push('/')}
+            />
+          </form>
+        )}
       </div>
     </>
   )
