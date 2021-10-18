@@ -48,7 +48,7 @@ const List = ({ type }) => {
               src={theme}
               alt=''
               style={{
-                border: currentTheme === theme && '5px solid rgba(255, 255, 255, 0.8)',
+                border: currentTheme === `${theme.slice(0, 4)}.jpg` && '5px solid rgba(255, 255, 255, 0.8)',
               }}
               onClick={() => {
                 const skin = `${theme.slice(0, 4)}.jpg`
