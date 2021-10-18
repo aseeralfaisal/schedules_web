@@ -75,10 +75,10 @@ const List = ({ type }) => {
   }, [windowWidth])
 
   React.useEffect(() => {
-    if (location === '/'){
+    if (location === '/') {
       todoInputRef.current.focus()
     }
-  },[location])
+  }, [location])
 
   return (
     <>
@@ -162,43 +162,47 @@ const List = ({ type }) => {
           </div>
         ) : (
           <div className='todo-list-parent'>
-            {completedTodos
-              .filter((todo) =>
-                searchInput !== '' ? todo.todo.toLowerCase().includes(searchInput.toLowerCase()) : todo
-              )
-              .map((todo, idx) => {
-                return (
-                  <div
-                    key={idx}
-                    className='todo-list-child'
-                    onClick={() => {
-                      console.log(todo)
-                    }}>
-                    {type !== 'completed' ? (
-                      <span className='material-icons'></span>
-                    ) : (
-                      <div className='completed-task'>
-                        <span className='material-icons'></span>
-                      </div>
-                    )}
-                    <div className='todo-list'>
-                      <h4
-                        style={{
-                          textTransform: 'capitalize',
-                        }}>
-                        {todo.todo}
-                      </h4>
-                      <div className='calendar-icon'>
-                        <span className='material-icons'></span>
-                      </div>
-                      <label style={{ fontSize: 12, marginLeft: 60 }}>
-                        {dayNames[todo.date.day].slice(0, 3)}, {monthNames[todo.date.month].slice(0, 3)} {todo.date.dt},{' '}
-                        {todo.date.year}
-                      </label>
-                    </div>
-                  </div>
+            {completedTodos ? (
+              completedTodos
+                .filter((todo) =>
+                  searchInput !== '' ? todo.todo.toLowerCase().includes(searchInput.toLowerCase()) : todo
                 )
-              })}
+                .map((todo, idx) => {
+                  return (
+                    <div
+                      key={idx}
+                      className='todo-list-child'
+                      onClick={() => {
+                        console.log(todo)
+                      }}>
+                      {type !== 'completed' ? (
+                        <span className='material-icons'></span>
+                      ) : (
+                        <div className='completed-task'>
+                          <span className='material-icons'></span>
+                        </div>
+                      )}
+                      <div className='todo-list'>
+                        <h4
+                          style={{
+                            textTransform: 'capitalize',
+                          }}>
+                          {todo.todo}
+                        </h4>
+                        <div className='calendar-icon'>
+                          <span className='material-icons'></span>
+                        </div>
+                        <label style={{ fontSize: 12, marginLeft: 60 }}>
+                          {dayNames[todo.date.day].slice(0, 3)}, {monthNames[todo.date.month].slice(0, 3)}{' '}
+                          {todo.date.dt}, {todo.date.year}
+                        </label>
+                      </div>
+                    </div>
+                  )
+                })
+            ) : (
+              <></>
+            )}
           </div>
         )}
 
