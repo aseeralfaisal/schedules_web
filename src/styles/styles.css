@@ -30,14 +30,14 @@
 }
 .bg {
   background-color: #212121;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 .bg .elem-type {
   position: absolute;
-  margin: 16px;
+  margin: 1rem;
   z-index: 2;
 }
 @media (min-width: 900px) {
@@ -54,7 +54,7 @@
   position: absolute;
   left: 30.7%;
   transform: translate(-50%, 0);
-  margin: 16px 0;
+  margin: 1rem 0;
 }
 @media (max-width: 1340px) {
   .bg .date-view {
@@ -84,38 +84,38 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 344px;
-  margin-left: 448px;
+  margin-top: 21.5rem;
+  margin-left: 28rem;
 }
 @media (max-width: 1486px) {
   .calendar {
-    margin-left: 384px;
+    margin-left: 24rem;
   }
 }
 @media (max-width: 1340px) {
   .calendar {
-    margin-top: 328px;
-    margin-left: 352px;
+    margin-top: 20.5rem;
+    margin-left: 22rem;
   }
 }
 @media (max-width: 1224px) {
   .calendar {
-    margin-left: 304px;
+    margin-left: 19rem;
   }
 }
 @media (max-width: 1112px) {
   .calendar {
-    margin-left: 272px;
+    margin-left: 17rem;
   }
 }
 @media (max-width: 1052px) {
   .calendar {
-    margin-left: 240px;
+    margin-left: 15rem;
   }
 }
 @media (max-width: 964px) {
   .calendar {
-    margin-left: 208px;
+    margin-left: 13rem;
   }
 }
 .showcase {
@@ -123,16 +123,16 @@
   top: 17%;
   transform: translate(-50%, 0);
   position: absolute;
-  margin: 0 112px;
-  width: 480px;
+  margin: 0 7rem;
+  width: 30em;
 }
 .showcase-middle {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(#02041bc9, #0d0b25e1);
-  border-radius: 32px;
-  padding: 32px;
+  border-radius: 2rem;
+  padding: 2rem;
   backdrop-filter: blur(20px);
 }
 .showcase-middle img {
@@ -152,8 +152,8 @@
   align-items: center;
   position: absolute;
   width: 100%;
-  margin-left: 128px;
-  top: 576px;
+  margin-left: 8rem;
+  top: 36em;
 }
 .textbox .material-icons {
   position: relative;
@@ -185,9 +185,9 @@
   margin-top: 6%;
   width: 70%;
   text-align: left;
-  text-indent: 24px;
-  height: 48px;
-  border-radius: 16px;
+  text-indent: 1.5rem;
+  height: 3rem;
+  border-radius: 1rem;
   background: linear-gradient(#02041bc9, #0d0b25e1);
   border: 1.5px solid rgba(179, 210, 255, 0.25);
   backdrop-filter: blur(20px);
@@ -215,23 +215,23 @@
 .todo-list-parent {
   position: relative;
   width: 71%;
-  margin-left: 352px;
-  margin-top: 72px;
+  margin-left: 22rem;
+  margin-top: 4.5rem;
   margin-bottom: 8%;
 }
 @media (max-width: 1448px) {
   .todo-list-parent {
-    margin-left: 320px;
+    margin-left: 20rem;
   }
 }
 @media (max-width: 1220px) {
   .todo-list-parent {
-    margin-left: 304px;
+    margin-left: 19rem;
   }
 }
 @media (max-width: 1136px) {
   .todo-list-parent {
-    margin-left: 288px;
+    margin-left: 18rem;
   }
 }
 @media (max-width: 1050px) {
@@ -242,14 +242,14 @@
 @media (max-width: 910px) {
   .todo-list-parent {
     width: 68%;
-    margin-left: 272px;
+    margin-left: 17rem;
   }
 }
 .todo-list-parent .material-icons {
   position: absolute;
   z-index: 1;
-  margin: 9.6px 19.2px;
-  font-size: 32px;
+  margin: 0.6rem 1.2rem;
+  font-size: 2rem;
   opacity: 0.9;
   cursor: pointer;
 }
@@ -258,12 +258,12 @@
 }
 .todo-list {
   color: white;
-  margin: 3.2px 11.2px;
-  padding: 9.6px 13.6px;
+  margin: 0.2rem 0.7rem;
+  padding: 0.6rem 0.85em;
   background: linear-gradient(#02041bc9, #0d0b25e1);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
-  text-indent: 36px;
+  border-radius: 1em;
+  text-indent: 2.25rem;
 }
 .todo-list:hover {
   background: linear-gradient(#1a0b5ac5, #015f96d0);
@@ -279,8 +279,8 @@
 }
 .todo-list-child .calendar-icon .material-icons {
   font-size: 20px;
-  margin-left: -36.8px;
-  top: 27.2px;
+  margin-left: -2.3rem;
+  top: 1.7rem;
 }
 .todo-list-child .calendar-icon .material-icons::before {
   content: 'today';
@@ -291,7 +291,7 @@
     top: 17%;
     transform: translate(-50%, 0);
     position: absolute;
-    margin: 0 -240px;
+    margin: 0 -15rem;
     transform: scale(0.6);
   }
   .textbox {
@@ -301,11 +301,11 @@
     position: absolute;
     width: 100%;
     margin-left: 0;
-    top: 576px;
+    top: 36em;
   }
   .todo-list-parent {
     width: 71%;
     margin-left: 16%;
-    margin-top: 72px;
+    margin-top: 4.5rem;
   }
 }
