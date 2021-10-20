@@ -3,27 +3,27 @@
   display: flex;
   left: 50%;
   transform: translate(-50%, 0);
-  margin-top: 5rem;
+  margin-top: 80px;
 }
 .themes-gallery .thumbs {
-  width: 15rem;
-  margin: 1rem;
-  border-radius: 1rem;
+  width: 240px;
+  margin: 16px;
+  border-radius: 16px;
   border: 5px solid #222ed8da;
 }
 @media (max-width: 1180px) {
   .themes-gallery .thumbs {
-    width: 12rem;
+    width: 192px;
   }
 }
 @media (max-width: 1050px) {
   .themes-gallery .thumbs {
-    width: 9rem;
+    width: 144px;
   }
 }
 @media (max-width: 600px) {
   .themes-gallery .thumbs {
-    width: 7rem;
+    width: 112px;
   }
 }
 .themes-gallery .thumbs:hover {

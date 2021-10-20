@@ -26,12 +26,12 @@
   font-weight: 500;
 }
 .primary {
-  padding: 1em;
+  padding: 16px;
   background: linear-gradient(#000428c5, #004e92d0);
   backdrop-filter: blur(10px);
   position: absolute;
   height: 200vh;
-  width: 15rem;
+  width: 240px;
   z-index: 2;
 }
 .primary .app-title {
@@ -40,27 +40,27 @@
 }
 @media (max-width: 900px) {
   .primary .app-title {
-    margin-left: 2.5rem;
+    margin-left: 40px;
   }
 }
 .primary .app-title .material-icons {
   color: rgba(255, 255, 255, 0.9);
-  margin: 0 0.25em;
-  font-size: 2.5em;
+  margin: 0 4px;
+  font-size: 40px;
 }
 .primary .app-title label {
-  font-size: 1.5em;
+  font-size: 24px;
   color: rgba(255, 255, 255, 0.9);
   font-weight: bold;
 }
 .primary .todo-search {
   display: flex;
-  margin: 1rem 0;
+  margin: 16px 0;
 }
 .primary .todo-search input {
   background-color: linear-gradient(#02041bc9, #0d0b25e1);
-  border-radius: 0.7rem;
-  text-indent: 0.1rem;
+  border-radius: 11.2px;
+  text-indent: 1.6px;
   border-style: solid;
   border-color: rgba(179, 210, 255, 0.3);
   border-width: 1.2px;
@@ -72,7 +72,7 @@
 .primary .todo-search .material-icons {
   position: absolute;
   font-size: 28px;
-  margin: 0.4rem;
+  margin: 6.4px;
   opacity: 0.4;
 }
 .primary .todo-search .material-icons::before {
@@ -81,8 +81,8 @@
 .primary input {
   font-size: calc(40px / 2.8);
   background: rgba(0, 0, 0, 0.3);
-  padding: 0.5em 2.4em;
-  border-radius: 1em;
+  padding: 8px 38.4px;
+  border-radius: 16px;
   color: #f1f1f1;
   outline: none;
   border: 2px rgba(0, 0, 0, 0) solid;
@@ -92,7 +92,7 @@
 }
 .primary ul {
   list-style: none;
-  margin: 1em -1.5em;
+  margin: 16px -24px;
 }
 .primary li {
   text-decoration: none;
@@ -102,14 +102,14 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 1em 1.66em;
+  padding: 16px 26.56px;
   width: 79.5%;
 }
 .primary li:hover {
   background-color: rgba(0, 0, 0, 0.15);
 }
 .primary li .material-icons {
-  margin: 0 0.5em;
+  margin: 0 8px;
   font-size: calc(40px / 2);
   color: rgba(255, 255, 255, 0.9);
 }

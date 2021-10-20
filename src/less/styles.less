@@ -12,7 +12,7 @@
   overflow-y: scroll;
   .elem-type {
     position: absolute;
-    margin: 1rem;
+    margin: 16px;
     z-index: 2;
     @media (min-width: 900px){
       opacity: 0;
@@ -31,7 +31,7 @@
       left: 60%;
       transform: translate(-50%, 0);
     }
-    margin: 1rem 0;
+    margin: 16px 0;
     @media (max-width: 900px) {
       left: 50%;
       transform: translate(-50%, 0);
@@ -50,26 +50,26 @@
   z-index: 5;
   .flex-center();
   width: 100%;
-  margin-top: 21.5rem;
-  margin-left: 28rem;
+  margin-top: 344px;
+  margin-left: 448px;
   @media (max-width: 1486px) {
-    margin-left: 24rem;
+    margin-left: 384px;
   }
   @media (max-width: 1340px) {
-    margin-top: 20.5rem;
-    margin-left: 22rem;
+    margin-top: 328px;
+    margin-left: 352px;
   }
   @media (max-width: 1224px) {
-    margin-left: 19rem;
+    margin-left: 304px;
   }
   @media (max-width: 1112px) {
-    margin-left: 17rem;
+    margin-left: 272px;
   }
   @media (max-width: 1052px) {
-    margin-left: 15rem;
+    margin-left: 240px;
   }
   @media (max-width: 964px) {
-    margin-left: 13rem;
+    margin-left: 208px;
   }
 }
 .showcase {
@@ -77,13 +77,13 @@
   top: 17%;
   transform: translate(-50%, 0);
   position: absolute;
-  margin: 0 7rem;
-  width: 30em;
+  margin: 0 112px;
+  width: 480px;
   &-middle {
     .flex-center-column;
     background: @backdrop;
-    border-radius: 2rem;
-    padding: 2rem;
+    border-radius: 32px;
+    padding: 32px;
     backdrop-filter: blur(20px);
     img {
       width: 300px;
@@ -102,8 +102,8 @@
   .flex-center();
   position: absolute;
   width: 100%;
-  margin-left: 8rem;
-  top: 36em;
+  margin-left: 128px;
+  top: 576px;
   .material-icons {
     position: relative;
     cursor: pointer;
@@ -133,9 +133,9 @@
     }
     width: 70%;
     text-align: left;
-    text-indent: 1.5rem;
-    height: 3rem;
-    border-radius: 1rem;
+    text-indent: 24px;
+    height: 48px;
+    border-radius: 16px;
     background: @backdrop;
     border: 1.5px solid rgba(179, 210, 255, 0.25);
     backdrop-filter: blur(20px);
@@ -157,30 +157,30 @@
 .todo-list-parent {
   position: relative;
   width: 71%;
-  margin-left: 22rem;
-  margin-top: 4.5rem;
+  margin-left: 352px;
+  margin-top: 72px;
   margin-bottom: 8%;
   @media (max-width: 1448px) {
-    margin-left: 20rem;
+    margin-left: 320px;
   }
   @media (max-width: 1220px) {
-    margin-left: 19rem;
+    margin-left: 304px;
   }
   @media (max-width: 1136px) {
-    margin-left: 18rem;
+    margin-left: 288px;
   }
   @media (max-width: 1050px) {
     width: 69%;
   }
   @media (max-width: 910px) {
     width: 68%;
-    margin-left: 17rem;
+    margin-left: 272px;
   }
   .material-icons {
     position: absolute;
     z-index: 1;
-    margin: 0.6rem 1.2rem;
-    font-size: 2rem;
+    margin: 9.6px 19.2px;
+    font-size: 32px;
     opacity: 0.9;
     cursor: pointer;
     &::before {
@@ -191,12 +191,12 @@
 
 .todo-list {
   color: white;
-  margin: 0.2rem 0.7rem;
-  padding: 0.6rem 0.85em;
+  margin: 3.2px 11.2px;
+  padding: 9.6px 13.6px;
   background: @backdrop;
   backdrop-filter: blur(10px);
-  border-radius: 1em;
-  text-indent: 2.25rem;
+  border-radius: 16px;
+  text-indent: 36px;
   &:hover {
     background: @grad-frost-light;
   }
@@ -222,8 +222,8 @@
   .calendar-icon {
     .material-icons {
       font-size: 20px;
-      margin-left: -2.3rem;
-      top: 1.7rem;
+      margin-left: -36.8px;
+      top: 27.2px;
       &::before {
         content: 'today';
       }
@@ -237,7 +237,7 @@
     top: 17%;
     transform: translate(-50%, 0);
     position: absolute;
-    margin: 0 -15rem;
+    margin: 0 -240px;
     // width: 30em;
     transform: scale(0.6)
   }
@@ -246,11 +246,11 @@
     position: absolute;
     width: 100%;
     margin-left: 0;
-    top: 36em;
+    top: 576px;
   }
   .todo-list-parent {
     width: 71%;
     margin-left: 16%;
-    margin-top: 4.5rem;
+    margin-top: 72px;
   }
 }
