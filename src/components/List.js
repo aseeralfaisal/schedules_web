@@ -22,7 +22,7 @@ const List = ({ type }) => {
   const date = new Date()
   const currentTheme = useSelector((state) => state.theme)
 
-  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   const monthNames = [
     'January',
     'February',
@@ -108,7 +108,7 @@ const List = ({ type }) => {
         {type !== 'completed' ? (
           <div className='todo-list-parent'>
             {todos
-              .filter((todo) =>
+              ?.filter((todo) =>
                 searchInput !== '' ? todo.todo.toLowerCase().includes(searchInput.toLowerCase()) : todo
               )
               .map((todo, idx) => {
