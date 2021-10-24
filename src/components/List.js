@@ -88,12 +88,12 @@ const List = ({ type }) => {
             <Calendar onChange={setDateVal} value={dateVal} onClickDay={(day) => console.log(day)} />
           </div>
         )}
-        <div style={{ opacity: windowWidth > 900 ? 1 : 0 }}>
+        {/* <div style={{ opacity: windowWidth > 900 ? 1 : 0 }}>
           <Sidebar />
         </div>
         <div style={{ opacity: openSidebar ? 1 : 0 }}>
           <Sidebar />
-        </div>
+        </div> */}
         <div className='bg-img'>
           <img src={currentTheme} alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
         </div>
@@ -206,7 +206,7 @@ const List = ({ type }) => {
           </div>
         )}
 
-        {type !== 'completed' && (
+        {/* {type !== 'completed' && (
           <div>
             {todos.length < 1 && (
               <div className='showcase' style={{ opacity: todos.length < 1 ? 1 : 0, transition: 'ease-in-out 0.2s' }}>
@@ -217,7 +217,7 @@ const List = ({ type }) => {
               </div>
             )}
           </div>
-        )}
+        )} */}
 
         {type !== 'completed' ? (
           <form className='textbox' onSubmit={(e) => onSubmit(e)}>

@@ -100,22 +100,14 @@
 .textbox {
   .flex-center();
   position: absolute;
-  width: 100%;
-  margin-left: 8rem;
-  top: 36em;
+  width: 100vw;
+  margin: 70vh 0;
   .material-icons {
     position: relative;
     cursor: pointer;
     font-size: calc(@lg-font / 1.2);
     opacity: 0.6;
-    margin-top: 5%;
-    margin-left: 66%;
-    @media (max-width: 1200px) {
-      margin-top: 6%;
-    }
-    @media (max-width: 1050px) {
-      margin-left: 57%;
-    }
+    margin-left: 60%;
     z-index: 2;
     &:hover {
       opacity: 1;
@@ -124,13 +116,8 @@
   .todo-input {
     position: absolute;
     outline: none;
-    border: none;
     z-index: 1;
-    margin-top: 6%;
-    @media (min-width: 1200px) {
-      margin-top: 5%;
-    }
-    width: 70%;
+    width: 70vw;
     text-align: left;
     text-indent: 1.5rem;
     height: 3rem;
@@ -140,9 +127,6 @@
     backdrop-filter: blur(20px);
     font-size: 15px;
     color: white;
-    @media (max-width: 1048px) {
-      width: 65%;
-    }
     &::-webkit-input-placeholder,
     &::placeholder {
       font-weight: 500;
@@ -159,22 +143,6 @@
   margin-left: 22rem;
   margin-top: 4.5rem;
   margin-bottom: 8%;
-  @media (max-width: 1448px) {
-    margin-left: 20rem;
-  }
-  @media (max-width: 1220px) {
-    margin-left: 19rem;
-  }
-  @media (max-width: 1136px) {
-    margin-left: 18rem;
-  }
-  @media (max-width: 1050px) {
-    width: 69%;
-  }
-  @media (max-width: 910px) {
-    width: 68%;
-    margin-left: 17rem;
-  }
   .material-icons {
     position: absolute;
     z-index: 1;
@@ -230,26 +198,3 @@
   }
 }
 
-@media (max-width: 900px) {
-  .showcase {
-    left: 50%;
-    top: 17%;
-    transform: translate(-50%, 0);
-    position: absolute;
-    margin: 0 -15rem;
-    // width: 30em;
-    transform: scale(0.6)
-  }
-  .textbox {
-    .flex-center();
-    position: absolute;
-    width: 100%;
-    margin-left: 0;
-    top: 36em;
-  }
-  .todo-list-parent {
-    width: 71%;
-    margin-left: 16%;
-    margin-top: 4.5rem;
-  }
-}

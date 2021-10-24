@@ -21,6 +21,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   font-weight: 500;
@@ -151,28 +152,16 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 100%;
-  margin-left: 8rem;
-  top: 36em;
+  width: 100vw;
+  margin: 70vh 0;
 }
 .textbox .material-icons {
   position: relative;
   cursor: pointer;
   font-size: calc(40px / 1.2);
   opacity: 0.6;
-  margin-top: 5%;
-  margin-left: 66%;
+  margin-left: 60%;
   z-index: 2;
-}
-@media (max-width: 1200px) {
-  .textbox .material-icons {
-    margin-top: 6%;
-  }
-}
-@media (max-width: 1050px) {
-  .textbox .material-icons {
-    margin-left: 57%;
-  }
 }
 .textbox .material-icons:hover {
   opacity: 1;
@@ -180,10 +169,8 @@
 .textbox .todo-input {
   position: absolute;
   outline: none;
-  border: none;
   z-index: 1;
-  margin-top: 6%;
-  width: 70%;
+  width: 70vw;
   text-align: left;
   text-indent: 1.5rem;
   height: 3rem;
@@ -193,16 +180,6 @@
   backdrop-filter: blur(20px);
   font-size: 15px;
   color: white;
-}
-@media (min-width: 1200px) {
-  .textbox .todo-input {
-    margin-top: 5%;
-  }
-}
-@media (max-width: 1048px) {
-  .textbox .todo-input {
-    width: 65%;
-  }
 }
 .textbox .todo-input::-webkit-input-placeholder,
 .textbox .todo-input::placeholder {
@@ -218,32 +195,6 @@
   margin-left: 22rem;
   margin-top: 4.5rem;
   margin-bottom: 8%;
-}
-@media (max-width: 1448px) {
-  .todo-list-parent {
-    margin-left: 20rem;
-  }
-}
-@media (max-width: 1220px) {
-  .todo-list-parent {
-    margin-left: 19rem;
-  }
-}
-@media (max-width: 1136px) {
-  .todo-list-parent {
-    margin-left: 18rem;
-  }
-}
-@media (max-width: 1050px) {
-  .todo-list-parent {
-    width: 69%;
-  }
-}
-@media (max-width: 910px) {
-  .todo-list-parent {
-    width: 68%;
-    margin-left: 17rem;
-  }
 }
 .todo-list-parent .material-icons {
   position: absolute;
@@ -284,28 +235,4 @@
 }
 .todo-list-child .calendar-icon .material-icons::before {
   content: 'today';
-}
-@media (max-width: 900px) {
-  .showcase {
-    left: 50%;
-    top: 17%;
-    transform: translate(-50%, 0);
-    position: absolute;
-    margin: 0 -15rem;
-    transform: scale(0.6);
-  }
-  .textbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    margin-left: 0;
-    top: 36em;
-  }
-  .todo-list-parent {
-    width: 71%;
-    margin-left: 16%;
-    margin-top: 4.5rem;
-  }
 }
