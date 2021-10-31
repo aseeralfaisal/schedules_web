@@ -6,7 +6,7 @@ export const counterSlice = createSlice({
     todosList: [],
     completed: [],
     searchInput: '',
-    theme: 'abs1.jpg',
+    theme: 'abs3.jpg',
   },
 
   reducers: {

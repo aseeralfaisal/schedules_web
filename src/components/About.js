@@ -31,7 +31,7 @@ const List = ({ type }) => {
           <Sidebar />
         </div>
         <div className='bg-img'>
-          <img src={currentTheme} alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
+          <img src={currentTheme} alt='' style={{ width: '100%', height: '110vh', position: 'absolute', top: 0, left: 0, objectFit: 'cover' }} />
         </div>
         <div className='elem-type'>
           <span className='material-icons' onClick={() => setOpenSidebar(!openSidebar)}>

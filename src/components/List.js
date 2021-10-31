@@ -84,14 +84,14 @@ const List = ({ type }) => {
     <>
       <div className='bg'>
         {(
-          <div className='calendar' style={{ opacity: showCalendar ? 1 : 0 }}>
+          <div className='calendar' style={{ display: showCalendar ? 'flex' : 'none' }}>
             <Calendar onChange={setDateVal} value={dateVal} onClickDay={(day) => console.log(day)} />
           </div>
         )}
-        <div style={{ opacity: windowWidth > 1026 ? 1 : 0 }}>
+        <div style={{ display: windowWidth > 1026 ? 'flex' : 'none' }}>
           <Sidebar />
         </div>
-        <div style={{ opacity: openSidebar ? 1 : 0, transition: 'ease-in 0.1s all' }}>
+        <div style={{ display: openSidebar ? 'flex' : 'none' }}>
           <Sidebar />
         </div>
         <div className='bg-img'>
@@ -186,7 +186,7 @@ const List = ({ type }) => {
                         <h4
                           style={{
                             textTransform: 'capitalize',
-                            marginLeft: 14
+                            marginLeft: 14,
                           }}>
                           {todo.todo}
                         </h4>
@@ -207,7 +207,7 @@ const List = ({ type }) => {
           </div>
         )}
 
-        {/* {type !== 'completed' && (
+        {type !== 'completed' && (
           <div>
             {todos.length < 1 && (
               <div className='showcase' style={{ opacity: todos.length < 1 ? 1 : 0, transition: 'ease-in-out 0.2s' }}>
@@ -218,7 +218,7 @@ const List = ({ type }) => {
               </div>
             )}
           </div>
-        )} */}
+        )}
 
         {type !== 'completed' ? (
           <form className='textbox' onSubmit={(e) => onSubmit(e)}>
