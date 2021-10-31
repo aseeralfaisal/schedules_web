@@ -48,15 +48,15 @@ const List = ({ type }) => {
   const dateValue = [{ day, month, dt, year }]
   // console.log(dateValue)
 
-  React.useEffect(() => {
-    window.addEventListener('click', (e) => {
-      if (e.target.getAttribute('data') !== 'calendar-icon') {
-        if (e.target.className !== 'calendar' || '') {
-          setShowCalendar(false)
-        } else setShowCalendar(true)
-      }
-    })
-  }, [])
+  // React.useEffect(() => {
+  //   window.addEventListener('click', (e) => {
+  //     if (e.target.getAttribute('data') !== 'calendar-icon') {
+  //       if (e.target.className !== 'calendar' || '') {
+  //         setShowCalendar(false)
+  //       } else setShowCalendar(true)
+  //     }
+  //   })
+  // }, [])
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -83,23 +83,23 @@ const List = ({ type }) => {
   return (
     <>
       <div className='bg'>
-        {showCalendar && (
-          <div className='calendar'>
+        {(
+          <div className='calendar' style={{ opacity: showCalendar ? 1 : 0 }}>
             <Calendar onChange={setDateVal} value={dateVal} onClickDay={(day) => console.log(day)} />
           </div>
         )}
         <div style={{ opacity: windowWidth > 1026 ? 1 : 0 }}>
           <Sidebar />
         </div>
-        <div style={{ opacity: openSidebar ? 1 : 0 }}>
+        <div style={{ opacity: openSidebar ? 1 : 0, transition: 'ease-in 0.1s all' }}>
           <Sidebar />
         </div>
         <div className='bg-img'>
           <img src={currentTheme} alt='' style={{ width: '100vw', objectFit: 'cover', height: '110vh', position: 'absolute', top: 0, left: 0 }} />
         </div>
         <div className='elem-type'>
-          <span className='material-icons' onClick={() => setOpenSidebar(!openSidebar)}>
-            {openSidebar ? 'menu_open' : 'menu'}
+          <span className='material-icons' onClick={() => setOpenSidebar(!openSidebar)} >
+            {openSidebar ? 'menu_open' : 'sort'}
           </span>
         </div>
         <div className='date-view'>
@@ -129,8 +129,8 @@ const List = ({ type }) => {
                           style={{
                             color:
                               todo.date.month < date.getMonth() ||
-                              todo.date.dt < date.getDate() ||
-                              todo.date.year < date.getFullYear()
+                                todo.date.dt < date.getDate() ||
+                                todo.date.year < date.getFullYear()
                                 ? '#FF3F00'
                                 : 'white',
                           }}></span>
@@ -141,14 +141,14 @@ const List = ({ type }) => {
                           marginLeft: 70,
                           color:
                             todo.date.month < date.getMonth() ||
-                            todo.date.dt < date.getDate() ||
-                            todo.date.year < date.getFullYear()
+                              todo.date.dt < date.getDate() ||
+                              todo.date.year < date.getFullYear()
                               ? '#FF3F00'
                               : 'white',
                           fontWeight:
                             todo.date.month < date.getMonth() ||
-                            todo.date.dt < date.getDate() ||
-                            todo.date.year < date.getFullYear()
+                              todo.date.dt < date.getDate() ||
+                              todo.date.year < date.getFullYear()
                               ? 'bold'
                               : '500',
                         }}>
@@ -223,12 +223,12 @@ const List = ({ type }) => {
         {type !== 'completed' ? (
           <form className='textbox' onSubmit={(e) => onSubmit(e)}>
 
-            {/* <span
+            <span
               data='calendar-icon'
               className='material-icons'
               onClick={() => (!showCalendar ? setShowCalendar(true) : setShowCalendar(false))}>
               event_available
-            </span> */}
+            </span>
 
             <input
               className='todo-input'
@@ -237,16 +237,16 @@ const List = ({ type }) => {
               value={todo}
               onChange={(e) => setTodo(e.target.value)}
               ref={todoInputRef}
-              />
+            />
           </form>
         ) : (
           <form className='textbox' onSubmit={(e) => onSubmit(e)}>
-            {/* <span
+            <span
               data='calendar-icon'
               className='material-icons'
               onClick={() => (!showCalendar ? setShowCalendar(true) : setShowCalendar(false))}>
               event_available
-            </span> */}
+            </span>
 
             <input
               className='todo-input'

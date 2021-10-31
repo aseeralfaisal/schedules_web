@@ -17,7 +17,7 @@ const Sidebar = () => {
       <div className='primary'>
         <div className='app-title'>
           {/* <span className='material-icons'>fact_check</span> */}
-          <i className="fas fa-sort-amount-down-alt"></i>
+          <i className="fas fa-check-double"></i>
           <label>Schedules</label>
         </div>
         <form

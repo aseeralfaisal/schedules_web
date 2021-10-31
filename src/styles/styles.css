@@ -1,11 +1,4 @@
 @font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLDz8V1s.ttf) format('truetype');
-}
-@font-face {
   font-family: 'Montserrat Alternates';
   font-style: normal;
   font-weight: 200;
@@ -63,6 +56,8 @@
 }
 .bg .elem-type {
   position: absolute;
+  cursor: pointer;
+  opacity: 0.9;
   margin: 1rem;
   z-index: 2;
 }
@@ -101,42 +96,21 @@
 .calendar {
   position: absolute;
   z-index: 5;
+  top: 45vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 21.5rem;
-  margin-left: 28rem;
+  transition: cubic-bezier(1, 0.085, 0.68, 1) 0.15s;
 }
-@media (max-width: 1486px) {
+@media (max-width: 650px) {
   .calendar {
-    margin-left: 24rem;
+    transform: scale(0.8);
+    top: 47vh;
   }
 }
-@media (max-width: 1340px) {
+@media (min-width: 1027px) {
   .calendar {
-    margin-top: 20.5rem;
-    margin-left: 22rem;
-  }
-}
-@media (max-width: 1224px) {
-  .calendar {
-    margin-left: 19rem;
-  }
-}
-@media (max-width: 1112px) {
-  .calendar {
-    margin-left: 17rem;
-  }
-}
-@media (max-width: 1052px) {
-  .calendar {
-    margin-left: 15rem;
-  }
-}
-@media (max-width: 964px) {
-  .calendar {
-    margin-left: 13rem;
+    margin-left: 27vw;
   }
 }
 .showcase {
@@ -172,23 +146,40 @@
   position: absolute;
   width: 100vw;
   top: 88%;
+  margin-left: 9.4vw;
   justify-content: center;
+}
+@media (min-width: 1340px) {
+  .textbox {
+    margin-left: 7vw;
+  }
+}
+@media (max-width: 1027px) {
+  .textbox {
+    margin-left: -1.2vw;
+  }
 }
 .textbox .material-icons {
   position: absolute;
-  margin-left: 90vw;
+  margin-left: 62vw;
+  margin-top: 1vh;
   cursor: pointer;
   font-size: calc(40px / 1.2);
   opacity: 0.6;
   z-index: 2;
 }
+@media (min-width: 1027px) {
+  .textbox .material-icons {
+    margin-left: 65vw;
+  }
+}
 .textbox .material-icons:hover {
   opacity: 1;
 }
 .textbox .todo-input {
-  margin-left: 20vw;
   width: 70vw;
   height: 70px;
+  padding: 0.6rem 0.85em;
   outline: none;
   z-index: 1;
   text-align: left;
@@ -200,16 +191,6 @@
   backdrop-filter: blur(20px);
   font-size: 15px;
   color: white;
-}
-@media (max-width: 1026px) {
-  .textbox .todo-input {
-    margin-left: 0;
-  }
-}
-@media (min-width: 1340px) {
-  .textbox .todo-input {
-    margin-left: 15vw;
-  }
 }
 .textbox .todo-input::-webkit-input-placeholder,
 .textbox .todo-input::placeholder {

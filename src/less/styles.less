@@ -8,6 +8,8 @@
   overflow-y: scroll;
   .elem-type {
     position: absolute;
+    cursor: pointer;
+    opacity: 0.9;
     margin: 1rem;
     z-index: 2;
     @media (min-width: 1026px) {
@@ -41,28 +43,17 @@
 .calendar {
   position: absolute;
   z-index: 5;
-  .flex-center();
-  width: 100%;
-  margin-top: 21.5rem;
-  margin-left: 28rem;
-  @media (max-width: 1486px) {
-    margin-left: 24rem;
+  top: 45vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  transition: cubic-bezier(1, 0.085, 0.68, 1) 0.15s;
+  @media (max-width: 650px){
+    transform: scale(0.8);
+    top: 47vh;
   }
-  @media (max-width: 1340px) {
-    margin-top: 20.5rem;
-    margin-left: 22rem;
-  }
-  @media (max-width: 1224px) {
-    margin-left: 19rem;
-  }
-  @media (max-width: 1112px) {
-    margin-left: 17rem;
-  }
-  @media (max-width: 1052px) {
-    margin-left: 15rem;
-  }
-  @media (max-width: 964px) {
-    margin-left: 13rem;
+  @media (min-width: 1027px){
+    margin-left: 27vw;
   }
 }
 .showcase {
@@ -96,11 +87,21 @@
   position: absolute;
   width: 100vw;
   top: 88%;
-  // left: 0;
+  margin-left: 9.4vw;
   justify-content: center;
+  @media (min-width: 1340px) {
+    margin-left: 7vw;
+  }
+  @media (max-width: 1027px) {
+    margin-left: -1.2vw;
+  }
   .material-icons {
     position: absolute;
-    margin-left: 90vw;
+    margin-left: 62vw;
+    @media (min-width: 1027px) {
+      margin-left: 65vw;
+    }
+    margin-top: 1vh;
     cursor: pointer;
     font-size: calc(@lg-font / 1.2);
     opacity: 0.6;
@@ -110,15 +111,9 @@
     }
   }
   .todo-input {
-    margin-left: 20vw;
     width: 70vw;
     height: 70px;
-    @media (max-width: 1026px) {
-      margin-left: 0;
-    }
-    @media (min-width: 1340px) {
-      margin-left: 15vw;
-    }
+    padding: 0.6rem 0.85em;
     outline: none;
     z-index: 1;
     text-align: left;
