@@ -46,6 +46,9 @@ const List = ({ type }) => {
   const year = dateVal.getFullYear()
 
   const dateValue = [{ day, month, dt, year }]
+  const WrapperRef = React.useRef(null);
+
+
   // console.log(dateValue)
 
   // React.useEffect(() => {
@@ -58,8 +61,17 @@ const List = ({ type }) => {
   //   })
   // }, [])
 
+  // React.useEffect(() => {
+  //   window.addEventListener('click', (e) => {
+  //     if (e.target.className !== 'calendar-icon') {
+  //       console.log(!WrapperRef.current.contains(e.target)) 
+  //     }
+  //   })
+  // }, [])
+
   const onSubmit = (e) => {
     e.preventDefault()
+    setShowCalendar(false)
     const itodo = { todo: todo, date: dateValue[0] }
     todo !== '' && dispatch(actions.pushTodo(itodo))
     setTodo('')
@@ -80,12 +92,15 @@ const List = ({ type }) => {
     }
   }, [location])
 
+
   return (
     <>
       <div className='bg'>
         {(
           <div className='calendar' style={{ display: showCalendar ? 'flex' : 'none' }}>
-            <Calendar onChange={setDateVal} value={dateVal} onClickDay={(day) => console.log(day)} />
+            <Calendar onChange={setDateVal} value={dateVal} onClickDay={(day) => {
+              setShowCalendar(false)
+            }} />
           </div>
         )}
         <div style={{ display: windowWidth > 1026 ? 'flex' : 'none' }}>
