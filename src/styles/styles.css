@@ -41,32 +41,27 @@
   margin: 1rem;
   z-index: 2;
 }
-@media (min-width: 900px) {
+@media (min-width: 1026px) {
   .bg .elem-type {
     opacity: 0;
   }
 }
 .bg-img {
   background-color: black;
-  width: 100%;
+  width: 100vw;
   z-index: 0;
 }
 .bg .date-view {
   position: absolute;
-  left: 30.7%;
-  transform: translate(-50%, 0);
-  margin: 1rem 0;
+  top: 1.8vh;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-@media (max-width: 1340px) {
+@media (min-width: 1025px) {
   .bg .date-view {
-    left: 60%;
-    transform: translate(-50%, 0);
-  }
-}
-@media (max-width: 900px) {
-  .bg .date-view {
-    left: 50%;
-    transform: translate(-50%, 0);
+    left: 7vw;
   }
 }
 .bg .date-view h1 {
@@ -132,7 +127,7 @@
   flex-direction: column;
   align-items: center;
   background: linear-gradient(#02041bc9, #0d0b25e1);
-  border-radius: 2rem;
+  border-radius: 10px;
   padding: 2rem;
   backdrop-filter: blur(20px);
 }
@@ -149,37 +144,47 @@
 }
 .textbox {
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   width: 100vw;
-  margin: 70vh 0;
+  top: 88%;
+  justify-content: center;
 }
 .textbox .material-icons {
-  position: relative;
+  position: absolute;
+  margin-left: 90vw;
   cursor: pointer;
   font-size: calc(40px / 1.2);
   opacity: 0.6;
-  margin-left: 60%;
   z-index: 2;
 }
 .textbox .material-icons:hover {
   opacity: 1;
 }
 .textbox .todo-input {
-  position: absolute;
+  margin-left: 20vw;
+  width: 70vw;
+  height: 70px;
   outline: none;
   z-index: 1;
-  width: 70vw;
   text-align: left;
   text-indent: 1.5rem;
   height: 3rem;
-  border-radius: 1rem;
+  border-radius: 10px;
   background: linear-gradient(#02041bc9, #0d0b25e1);
   border: 1.5px solid rgba(179, 210, 255, 0.25);
   backdrop-filter: blur(20px);
   font-size: 15px;
   color: white;
+}
+@media (max-width: 1026px) {
+  .textbox .todo-input {
+    margin-left: 0;
+  }
+}
+@media (min-width: 1340px) {
+  .textbox .todo-input {
+    margin-left: 15vw;
+  }
 }
 .textbox .todo-input::-webkit-input-placeholder,
 .textbox .todo-input::placeholder {
@@ -191,15 +196,26 @@
 }
 .todo-list-parent {
   position: relative;
-  width: 71%;
-  margin-left: 22rem;
-  margin-top: 4.5rem;
-  margin-bottom: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20vw;
+  margin-top: 10vh;
+}
+@media (max-width: 1026px) {
+  .todo-list-parent {
+    margin-left: 0;
+  }
+}
+@media (min-width: 1340px) {
+  .todo-list-parent {
+    margin-left: 15vw;
+  }
 }
 .todo-list-parent .material-icons {
   position: absolute;
   z-index: 1;
-  margin: 0.6rem 1.2rem;
+  margin: 1.2rem 2rem;
   font-size: 2rem;
   opacity: 0.9;
   cursor: pointer;
@@ -209,11 +225,13 @@
 }
 .todo-list {
   color: white;
-  margin: 0.2rem 0.7rem;
+  margin: 0.15rem 0.7rem;
   padding: 0.6rem 0.85em;
   background: linear-gradient(#02041bc9, #0d0b25e1);
+  width: 70vw;
+  height: 70px;
   backdrop-filter: blur(10px);
-  border-radius: 1em;
+  border-radius: 10px;
   text-indent: 2.25rem;
 }
 .todo-list:hover {
@@ -230,8 +248,8 @@
 }
 .todo-list-child .calendar-icon .material-icons {
   font-size: 20px;
-  margin-left: -2.3rem;
-  top: 1.7rem;
+  margin-left: -25px;
+  margin-top: 3px;
 }
 .todo-list-child .calendar-icon .material-icons::before {
   content: 'today';

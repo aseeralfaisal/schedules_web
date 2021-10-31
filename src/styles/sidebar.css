@@ -21,6 +21,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   font-weight: 500;
@@ -61,6 +62,7 @@
   background-color: linear-gradient(#02041bc9, #0d0b25e1);
   border-radius: 11.2px;
   text-indent: 1.6px;
+  width: 205px;
   border-style: solid;
   border-color: rgba(179, 210, 255, 0.3);
   border-width: 1.2px;
@@ -103,7 +105,7 @@
   display: flex;
   align-items: center;
   padding: 16px 26.56px;
-  width: 79.5%;
+  width: 247px;
 }
 .primary li:hover {
   background-color: rgba(0, 0, 0, 0.15);

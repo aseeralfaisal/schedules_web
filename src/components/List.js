@@ -88,14 +88,14 @@ const List = ({ type }) => {
             <Calendar onChange={setDateVal} value={dateVal} onClickDay={(day) => console.log(day)} />
           </div>
         )}
-        {/* <div style={{ opacity: windowWidth > 900 ? 1 : 0 }}>
+        <div style={{ opacity: windowWidth > 1026 ? 1 : 0 }}>
           <Sidebar />
         </div>
         <div style={{ opacity: openSidebar ? 1 : 0 }}>
           <Sidebar />
-        </div> */}
+        </div>
         <div className='bg-img'>
-          <img src={currentTheme} alt='' style={{ width: '100%', height: '110vh', position: 'fixed' }} />
+          <img src={currentTheme} alt='' style={{ width: '100vw', objectFit: 'cover', height: '110vh', position: 'absolute', top: 0, left: 0 }} />
         </div>
         <div className='elem-type'>
           <span className='material-icons' onClick={() => setOpenSidebar(!openSidebar)}>
@@ -122,7 +122,7 @@ const List = ({ type }) => {
                     }}>
                     <span className='material-icons'></span>
                     <div className='todo-list'>
-                      <h4 style={{ textTransform: 'capitalize' }}>{todo.todo}</h4>
+                      <h4 style={{ textTransform: 'capitalize', marginLeft: 14 }}>{todo.todo}</h4>
                       <div className='calendar-icon'>
                         <span
                           className='material-icons'
@@ -138,7 +138,7 @@ const List = ({ type }) => {
                       <label
                         style={{
                           fontSize: 12,
-                          marginLeft: 60,
+                          marginLeft: 70,
                           color:
                             todo.date.month < date.getMonth() ||
                             todo.date.dt < date.getDate() ||
@@ -186,13 +186,14 @@ const List = ({ type }) => {
                         <h4
                           style={{
                             textTransform: 'capitalize',
+                            marginLeft: 14
                           }}>
                           {todo.todo}
                         </h4>
                         <div className='calendar-icon'>
                           <span className='material-icons'></span>
                         </div>
-                        <label style={{ fontSize: 12, marginLeft: 60 }}>
+                        <label style={{ fontSize: 12, marginLeft: 70 }}>
                           {dayNames[todo.date.day].slice(0, 3)}, {monthNames[todo.date.month].slice(0, 3)}{' '}
                           {todo.date.dt}, {todo.date.year}
                         </label>
@@ -221,12 +222,13 @@ const List = ({ type }) => {
 
         {type !== 'completed' ? (
           <form className='textbox' onSubmit={(e) => onSubmit(e)}>
-            <span
+
+            {/* <span
               data='calendar-icon'
               className='material-icons'
               onClick={() => (!showCalendar ? setShowCalendar(true) : setShowCalendar(false))}>
               event_available
-            </span>
+            </span> */}
 
             <input
               className='todo-input'
@@ -235,16 +237,16 @@ const List = ({ type }) => {
               value={todo}
               onChange={(e) => setTodo(e.target.value)}
               ref={todoInputRef}
-            />
+              />
           </form>
         ) : (
           <form className='textbox' onSubmit={(e) => onSubmit(e)}>
-            <span
+            {/* <span
               data='calendar-icon'
               className='material-icons'
               onClick={() => (!showCalendar ? setShowCalendar(true) : setShowCalendar(false))}>
               event_available
-            </span>
+            </span> */}
 
             <input
               className='todo-input'
