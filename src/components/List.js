@@ -4,6 +4,7 @@ import * as actions from '../redux/slice'
 import Sidebar from './Sidebar'
 import * as React from 'react'
 import Calendar from 'react-calendar'
+// import Loader from "react-loader-spinner";
 import '../styles/calendar.css'
 import { useLocation, useHistory } from 'react-router'
 
@@ -46,8 +47,7 @@ const List = ({ type }) => {
   const year = dateVal.getFullYear()
 
   const dateValue = [{ day, month, dt, year }]
-  const WrapperRef = React.useRef(null);
-
+  // const WrapperRef = React.useRef(null);
 
   // console.log(dateValue)
 
@@ -88,14 +88,24 @@ const List = ({ type }) => {
 
   React.useEffect(() => {
     if (location === '/') {
-      todoInputRef.current.focus()
+      todoInputRef?.current.focus()
     }
   }, [location])
 
-
+  // const [backgroundloaded, setBackgroundloaded] = React.useState(true)
+  
   return (
     <>
-      <div className='bg'>
+      {/* {!backgroundloaded && <div style={{ background: '#000', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', paddingTop: '25vh' }}>
+        <Loader
+          type="Puff"
+          color="#0055FF"
+          height={100}
+          width={100}
+          timeout={0} //3 secs
+        />
+      </div>} */}
+      {<div className='bg'>
         {(
           <div className='calendar' style={{ display: showCalendar ? 'flex' : 'none' }}>
             <Calendar onChange={setDateVal} value={dateVal} onClickDay={(day) => {
@@ -274,6 +284,7 @@ const List = ({ type }) => {
           </form>
         )}
       </div>
+      }
     </>
   )
 }
