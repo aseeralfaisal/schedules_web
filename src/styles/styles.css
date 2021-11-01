@@ -105,7 +105,7 @@
 @media (max-width: 650px) {
   .calendar {
     transform: scale(0.8);
-    top: 47vh;
+    top: 43vh;
   }
 }
 @media (min-width: 1027px) {
