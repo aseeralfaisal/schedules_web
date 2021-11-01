@@ -5,6 +5,7 @@ import * as actions from '../redux/slice'
 import Sidebar from './Sidebar'
 import * as React from 'react'
 import themes from './Themes'
+// import Loader from "react-loader-spinner";
 
 const List = ({ type }) => {
   const [openSidebar, setOpenSidebar] = React.useState(false)
@@ -21,9 +22,24 @@ const List = ({ type }) => {
     if (windowWidth > 900) setOpenSidebar(false)
   }, [windowWidth])
 
+  // const [loaded, setLoaded] = React.useState(false)
+
+    // const imgLoad = () => {
+    //   setLoaded(true)
+    // }
+
   return (
     <>
-      <div className='bg'>
+      {/* {!loaded && <div style={{ background: '#000', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', paddingTop: '25vh' }}>
+        <Loader
+          type="Puff"
+          color="#0055FF"
+          height={100}
+          width={100}
+          timeout={0}
+        />
+      </div>} */}
+      {<div className='bg'>
         <div style={{ opacity: windowWidth > 900 ? 1 : 0 }}>
           <Sidebar />
         </div>
@@ -58,7 +74,7 @@ const List = ({ type }) => {
             />
           ))}
         </div>
-      </div>
+      </div>}
     </>
   )
 }

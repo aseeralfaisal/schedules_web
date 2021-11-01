@@ -4,9 +4,9 @@ import * as actions from '../redux/slice'
 import Sidebar from './Sidebar'
 import * as React from 'react'
 import Calendar from 'react-calendar'
-// import Loader from "react-loader-spinner";
 import '../styles/calendar.css'
 import { useLocation, useHistory } from 'react-router'
+import Loader from "react-loader-spinner";
 
 const List = ({ type }) => {
   const [todo, setTodo] = React.useState('')
@@ -92,11 +92,11 @@ const List = ({ type }) => {
     }
   }, [location])
 
-  // const [backgroundloaded, setBackgroundloaded] = React.useState(true)
-  
+  const [bgloaded, setBgloaded] = React.useState(true)
+
   return (
     <>
-      {/* {!backgroundloaded && <div style={{ background: '#000', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', paddingTop: '25vh' }}>
+      {!bgloaded && <div style={{ background: '#000', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', paddingTop: '25vh' }}>
         <Loader
           type="Puff"
           color="#0055FF"
@@ -104,8 +104,8 @@ const List = ({ type }) => {
           width={100}
           timeout={0} //3 secs
         />
-      </div>} */}
-      {<div className='bg'>
+      </div>}
+      {bgloaded && <div className='bg'>
         {(
           <div className='calendar' style={{ display: showCalendar ? 'flex' : 'none' }}>
             <Calendar onChange={setDateVal} value={dateVal} onClickDay={(day) => {
@@ -120,7 +120,7 @@ const List = ({ type }) => {
           <Sidebar />
         </div>
         <div className='bg-img'>
-          <img src={currentTheme} alt='' style={{ width: '100vw', objectFit: 'cover', height: '110vh', position: 'absolute', top: 0, left: 0 }} />
+          <img onLoad={() => setBgloaded(true)} src={currentTheme} alt='' style={{ width: '100vw', objectFit: 'cover', height: '110vh', position: 'absolute', top: 0, left: 0 }} />
         </div>
         <div className='elem-type'>
           <span className='material-icons' onClick={() => setOpenSidebar(!openSidebar)} >
